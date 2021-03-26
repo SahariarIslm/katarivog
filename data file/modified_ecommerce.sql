@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2020 at 01:13 PM
+-- Generation Time: Mar 26, 2021 at 03:41 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -298,7 +299,10 @@ INSERT INTO `categories` (`id`, `parent`, `categoryName`, `headerImage`, `origin
 (3, 2, 'Dresses', NULL, NULL, NULL, NULL, 1, 1, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, '2020-06-06 00:00:13', '2020-06-07 01:04:51'),
 (4, 1, 'Women', NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, '2020-06-06 00:01:04', '2020-06-06 00:01:19'),
 (5, 4, 'Handbags', NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, '2020-06-06 00:01:53', '2020-06-06 01:21:09'),
-(6, NULL, 'Watches', NULL, NULL, NULL, 'fa fa-laptop', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, '2020-06-06 00:56:38', '2020-06-06 01:38:24');
+(6, NULL, 'Watches', NULL, NULL, NULL, 'fa fa-laptop', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, '2020-06-06 00:56:38', '2020-06-06 01:38:24'),
+(7, NULL, 'Dairy', NULL, 'images/categories/original_image/Icons-for-milky-02-300x300_3797112319.png', 'images/categories/image/Icons-for-milky-02-300x300_28678492053.png', NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 1, '2021-03-26 13:48:27', '2021-03-26 13:48:27'),
+(8, NULL, 'Grocery', NULL, 'images/categories/original_image/Icons-for-milky-03-300x300_51206066332.png', 'images/categories/image/Icons-for-milky-03-300x300_28009258934.png', NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 1, '2021-03-26 13:50:44', '2021-03-26 13:50:44'),
+(9, NULL, 'Herbal & Grain', NULL, 'images/categories/original_image/Mango-Pickle-Ball-Homemade_62876926094.jpg', 'images/categories/image/Mango-Pickle-Ball-Homemade_14599170753.jpg', NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, 1, '2021-03-26 13:51:53', '2021-03-26 13:51:53');
 
 -- --------------------------------------------------------
 
@@ -785,24 +789,23 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `root_menu`, `parent`, `menuName`, `articleName`, `parentArticle`, `firstHomeTitle`, `firstHomeImage`, `homeDescription`, `urlLink`, `menuIcon`, `metaTitle`, `metaKeyword`, `metaDescription`, `orderBy`, `menuStatus`, `showInMenu`, `showInFooterMenu`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, 'Customer Service', 'Customer Service', NULL, 'Customer Service', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 04:54:23', '2020-06-09 05:30:32'),
 (2, NULL, NULL, 'Corporation', 'Corporation', NULL, 'Corporation', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 2, 1, '0', '1', '2020-06-09 04:58:44', '2020-06-09 04:58:44'),
 (3, NULL, NULL, 'Why Choose Us', 'Why Choose Us', NULL, 'Why Choose Us', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 04:59:53', '2020-06-09 04:59:53'),
-(4, 1, 1, 'My Account', 'My Account', 1, 'My Account', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:03:24', '2020-06-09 05:03:24'),
+(4, NULL, NULL, 'My Account', 'My Account', 1, 'My Account', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:03:24', '2021-03-26 14:18:33'),
 (5, 1, 1, 'Order History', 'Order History', 1, 'Order History', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 2, 1, '0', '1', '2020-06-09 05:10:12', '2020-06-09 05:10:12'),
-(6, 1, 1, 'FAQ', 'Frequently Asked Questions', 1, 'Frequently Asked Questions', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 05:10:34', '2020-06-09 06:55:13'),
-(7, 1, 1, 'Specials', 'Specials', 1, 'Specials', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 4, 1, '0', '1', '2020-06-09 05:11:05', '2020-06-09 05:11:05'),
-(8, 2, 2, 'About Us', 'About us', 2, 'About us', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:11:34', '2020-06-09 05:11:34'),
+(6, NULL, NULL, 'FAQ', 'Frequently Asked Questions', 1, 'Frequently Asked Questions', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 05:10:34', '2021-03-26 14:19:27'),
+(7, NULL, NULL, 'Specials', 'Specials', 1, 'Specials', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 4, 1, '0', '1', '2020-06-09 05:11:05', '2021-03-26 14:30:53'),
+(8, NULL, NULL, 'About Us', 'About us', 2, 'About us', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:11:34', '2021-03-26 14:20:35'),
 (9, 2, 2, 'Customer Service', 'Customer Service', 2, 'Customer Service', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 2, 1, '0', '1', '2020-06-09 05:11:50', '2020-06-09 05:11:50'),
 (10, 2, 2, 'Company', 'Company', 2, 'Company', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 05:12:10', '2020-06-09 05:12:10'),
 (11, 2, 2, 'Investor Relations', 'Investor Relations', 2, 'Investor Relations', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 4, 1, '0', '1', '2020-06-09 05:13:00', '2020-06-09 05:13:00'),
 (12, 2, 2, 'Advanced Search', 'Advanced Search', 2, 'Advanced Search', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 5, 1, '0', '1', '2020-06-09 05:13:23', '2020-06-09 05:13:23'),
-(13, 3, 3, 'Shopping Guide', 'Shopping Guide', 3, 'Shopping Guide', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:15:27', '2020-06-09 05:15:27'),
+(13, NULL, NULL, 'Shopping Guide', 'Shopping Guide', 3, 'Shopping Guide', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:15:27', '2021-03-26 14:35:17'),
 (14, 3, 3, 'Blog', 'Blog', 3, 'Blog', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 2, 1, '0', '1', '2020-06-09 05:15:45', '2020-06-09 05:15:45'),
 (15, 3, 3, 'Company', 'Company', 3, 'Company', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 05:16:23', '2020-06-09 05:16:23'),
 (16, 3, 3, 'Investor Relations', 'Investor Relations', 3, 'Investor Relations', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 4, 1, '0', '1', '2020-06-09 05:17:22', '2020-06-09 05:17:22'),
 (17, 3, 3, 'Contact Us', 'Contact Us', 3, 'Contact Us', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 5, 1, '0', '1', '2020-06-09 05:17:46', '2020-06-09 05:17:46'),
-(18, 1, 1, 'Help Center', 'Help Center', 1, 'Help Center', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 5, 1, '0', '1', '2020-06-09 05:59:44', '2020-06-09 05:59:44');
+(18, NULL, NULL, 'Help Center', 'Help Center', 1, 'Help Center', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 5, 1, '0', '1', '2020-06-09 05:59:44', '2021-03-26 14:28:53');
 
 -- --------------------------------------------------------
 
@@ -2047,7 +2050,7 @@ CREATE TABLE `user_roles` (
 --
 
 INSERT INTO `user_roles` (`id`, `parentRole`, `level`, `name`, `status`, `permission`, `actionPermission`, `created_at`, `updated_at`) VALUES
-(2, NULL, 1, 'Super User', 1, '3,13,14,15,16,17,41,55,77,82,6,7,8,10,11,86,43,42,44,45,46,47,48,62,51,63,64,65,66,68,12,52,53,54,56,57,58,59,60,69,70,72,75,76,49,50,67,71,73,74,36,37,38,39,40,81,18,19,20,21,22,23,24,26,28,32,34,84,85', '8,9,14,15,7,5,6,13,16,17,18,19,20,21,22,23,68,69,70,71,118,119,120,161,162,163,164,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,10,11,12,72,73,74,75,76,77,79,78,80,81,82,83,84,85,107,108,109,110,128,129,130,131,133,112,113,114,115,116,117,121,122,123,124,125,126,134,135,137,140,141,111,132,136,138,139,55,56,57,86,58,64,65,66,67,87,59,60,61,62,88,24,25,26,27,28,29,34,35,40,41,42,43,36,37,38,39,147,148,149,150,152,142,44,50,52,53,51,89,165,166,167,168,169,170,171,172', '2019-04-17 00:50:05', '2020-06-17 04:39:21'),
+(2, NULL, 1, 'Super User', 1, '3,13,14,15,16,17,41,55,77,82,6,7,8,10,11,86,43,49,62,52,12,53,54,56,57,36,37,38,39,40,81,18,19,20,21,22,23,24,26,28,32,34,84,85', '8,9,14,15,4,7,5,6,13,16,17,18,19,20,21,22,23,68,69,70,71,118,119,120,161,162,163,164,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,112,113,114,115,116,117,121,122,123,55,56,57,86,58,64,65,66,67,87,59,60,61,62,88,24,25,26,27,28,29,34,35,40,41,42,43,36,37,38,39,147,148,149,150,152,142,44,50,52,53,51,89,165,166,167,168,169,170,171,172', '2019-04-17 00:50:05', '2021-03-26 13:43:46'),
 (3, 2, 2, 'Admin', 1, '3,6,7,8,10,11,12,13,14,15,16,17,41,55,18,19,21,22,23,24,26,36,37,39,40,81,43,42,44,45,46,47,48,49,50,67,71,73,74,52,53,54,56,57,58,59,60,69,70,72,75,76,62,51,63,64,65,66,68,77,78,79,80', '90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,8,9,14,15,4,7,5,6,13,16,17,18,19,20,21,22,23,68,69,70,71,118,119,120,28,29,34,35,40,41,42,43,36,37,38,39,147,148,149,150,152,64,65,66,67,87,59,60,61,62,88,10,11,12,72,73,74,75,76,77,79,78,80,81,82,83,84,85,107,108,109,111,132,136,138,139,112,113,114,115,116,117,121,122,123,124,125,126,134,135,137,140,141,110,128,129,130,131,133,143,144,145,146,157,158,159,160,153,154,155,156', '2019-04-17 00:52:54', '2020-04-01 21:00:10');
 
 -- --------------------------------------------------------
@@ -2611,7 +2614,7 @@ ALTER TABLE `cash_sale_items`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `client_entries`
