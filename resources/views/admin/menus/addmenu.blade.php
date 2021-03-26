@@ -189,11 +189,11 @@
         <div class="col-sm-9">
             <div class="form-control">
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="showInFooterMenu" name="showInFooterMenu" class="custom-control-input" value="1"  checked="" required>
+                    <input type="radio" id="showInFooterMenu" name="showInFooterMenu" class="custom-control-input" value="1" required>
                     <label class="custom-control-label" for="showInFooterMenu">Yes</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="hideInFooterMainMenu" name="showInFooterMenu" class="custom-control-input" value="0">
+                    <input type="radio" id="hideInFooterMainMenu" name="showInFooterMenu" class="custom-control-input" value="0" checked="">
                     <label class="custom-control-label" for="hideInFooterMainMenu">No</label>
                 </div>
             </div>

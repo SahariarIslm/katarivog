@@ -1,3 +1,6 @@
+@php
+  $footer_menu_list = \App\Helper\GetData::MenuList('showInFooterMenu');
+@endphp
 <div class="footer-widgets footer footer-2 dark">
     <div class="row dark large-columns-3 mb-0">
         <div id="pages-4" class="col pb-0 widget widget_pages">
@@ -5,47 +8,37 @@
             <div class="is-divider small">
             </div>
             <ul>
-                <li class="page_item page-item-12 current_page_item">
-                    <a href="index.html" aria-current="page">
-                        Home
-                    </a>
-                </li>
-                <li class="page_item page-item-14">
-                    <a href="about-us/index.html">
-                        About Us
-                    </a>
-                </li>
-                <li class="page_item page-item-237">
-                    <a href="my-account/index.html">
-                        My Account
-                    </a>
-                </li>
-                <li class="page_item page-item-387">
-                    <a href="privacy-policy/index.html">
-                        Privacy Policy
-                    </a>
-                </li>
-                <li class="page_item page-item-390">
-                    <a href="terms-conditions/index.html">
-                        Terms &#038; Conditions
-                    </a>
-                </li>
+                @foreach ($footer_menu_list as $key=>$footer_menu)
+                @if($key <= 3)
+                    @php
+                        $link = route('page.content',['menuName'=>str_replace(' ', '-', $footer_menu->menuName),'menuId'=>$footer_menu->id]);
+                    @endphp 
+                    <li class="page_item page-item-12 current_page_item">
+                        <a href="{{$link}}" aria-current="page">
+                            {{$footer_menu->menuName}}
+                        </a>
+                    </li>
+                @endif
+                @endforeach
             </ul>
         </div>
         <div id="recent-posts-4" class="col pb-0 widget widget_recent_entries">
-            <span class="widget-title">Nutrition Guide</span>
+            <span class="widget-title">Useful Links</span>
             <div class="is-divider small">
             </div>
             <ul>
-                <li>
-                    <a href="10-surprising-health-benefits-of-honey/index.html">10 Surprising Health Benefits of Honey</a>
-                </li>
-                <li>
-                    <a href="11-proven-health-benefits-of-garlic/index.html">11 Proven Health Benefits of Garlic</a>
-                </li>
-                <li>
-                    <a href="health-benefits-of-cumin/index.html">Health Benefits of Cumin</a>
-                </li>
+                @foreach ($footer_menu_list as $key=>$footer_menu)
+                @if($key >= 4 && $key < 8 )
+                    @php
+                        $link = route('page.content',['menuName'=>str_replace(' ', '-', $footer_menu->menuName),'menuId'=>$footer_menu->id]);
+                    @endphp 
+                    <li class="page_item page-item-12 current_page_item">
+                        <a href="{{$link}}" aria-current="page">
+                            {{$footer_menu->menuName}}
+                        </a>
+                    </li>
+                @endif
+                @endforeach
             </ul>
         </div>
         <div id="text-3" class="col pb-0 widget widget_text">
