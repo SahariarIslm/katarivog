@@ -83,7 +83,9 @@ class FrontendController extends Controller
     $blogHeader = HeaderBlock::where('section','blogs')->where('articleStatus',1)->first();          
     $blogList = Blog::where('articleStatus',1)->orderBy('orderBy','ASC')->get();
 
-    return view('frontend.home.home')->with(compact('setReview','title','metaTag','policy_list','firstBannerList','secondBannerList','topProductSectionList','middleProductSectionList','blogHeader','blogList','bottomProductSectionList','sidebarProductSectionList','hotProductList','specialProductList'));
+    $category_list = Category::where('categoryStatus',1)->orderBy('orderBy','ASC')->get();
+
+    return view('frontend.home.home')->with(compact('setReview','title','metaTag','policy_list','firstBannerList','secondBannerList','topProductSectionList','middleProductSectionList','blogHeader','blogList','bottomProductSectionList','sidebarProductSectionList','hotProductList','specialProductList','category_list'));
   }
 
   public function searchProduct(Request $request){

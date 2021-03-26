@@ -325,8 +325,8 @@ class ProductController extends Controller
         foreach($productImages as $productImage){
             $product_image .=
             '
-            <div class="card card_image_'.$productImage->id.'" style="width: 200px; display: inline-block;" align="center">
-                <img class="card-img-top" src="'.url('/').'/'.$productImage->images.'" alt="Card image" style="width:150px; height: 150px;">
+            <div class="card card_image_'.$productImage->id.'" align="center">
+                <img class="card-img-top" src="'.url('/').'/'.$productImage->images.'" alt="Card image">
                 <div class="card-body">
                     <a href="javascript:void(0)" data-id="'.$productImage->id.'" data-token="'.csrf_token().'" class="btn btn-outline-danger" onclick="removeImage('.$productImage->id.')" style="width: 100%;">Delete</a>
                 </div>

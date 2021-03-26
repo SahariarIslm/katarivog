@@ -53,7 +53,7 @@
                 <div class="form-group {{ $errors->has('headerImage') ? ' has-danger' : '' }}">
                     <label for="headerImage">Title Image</label>
                     <input type="file" class="form-control form-control-danger" name="headerImage" style="margin-bottom: 10px;">
-                    <span style="color: red;">/* width : 512 px, Height: 512 px */</span> <br>
+                    <span style="color: red;">/* width : 300 px, Height: 300 px */</span> <br>
                     @if ($errors->has('headerImage'))
                         @foreach($errors->get('headerImage') as $error)
                             <div class="form-control-feedback">{{ $error }}</div>

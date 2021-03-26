@@ -74,19 +74,19 @@ class CategoryController extends Controller
 
         
         if($request->image){
-            $width = '100%';
-            $height = '100%';
+            $width = '300';
+            $height = '300';
             $originalImage = \App\HelperClass::UploadImage($request->image,'categories','images/categories/original_image/',@$width,@$height);
         }
         if($request->headerImage){
-            $width = '850';
-            $height = '360';
+            $width = '300';
+            $height = '300';
             $headerImage = \App\HelperClass::UploadImage($request->headerImage,'categories','images/categories/header_image/',@$width,@$height);
         }
 
         if($request->image){
-            $width = '325';
-            $height = '225';
+            $width = '300';
+            $height = '300';
             $image = \App\HelperClass::UploadImage($request->image,'categories','images/categories/image/',@$width,@$height);
         }
 
@@ -133,8 +133,8 @@ class CategoryController extends Controller
 
         $category = Category::find($categoryId);
         if($request->image){
-            $width = '100%';
-            $height = '100%';
+            $width = '300';
+            $height = '300';
             @unlink($category->originalImage);
             $originalImage = \App\HelperClass::UploadImage($request->image,'categories','images/categories/original_image/',@$width,@$height);
              $category->update( [
@@ -142,8 +142,8 @@ class CategoryController extends Controller
             ]);
         }
         if($request->headerImage){
-            $width = '850';
-            $height = '360';
+            $width = '300';
+            $height = '300';
             @unlink($category->headerImage);
             $headerImage = \App\HelperClass::UploadImage($request->headerImage,'categories','images/categories/header_image/',@$width,@$height);
             $category->update( [
@@ -152,8 +152,8 @@ class CategoryController extends Controller
         }
         if($request->image){
             @unlink($category->image);
-            $width = '325';
-            $height = '225';
+            $width = '300';
+            $height = '300';
             $image = \App\HelperClass::UploadImage($request->image,'categories','images/categories/image/',@$width,@$height);
             $category->update( [
                 'image' => $image,          

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use URL;
 use Session;
-use App\Model\Menu;
+use App\Menu;
 use App\Model\Article;
 
 class MenuController extends Controller

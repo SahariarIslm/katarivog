@@ -15,7 +15,7 @@
                     <div class="form-group {{ $errors->has('productImage') ? ' has-danger' : '' }}">
                         <input type="file" class="form-control" id="productImage" aria-describedby="fileHelp" name="productImage" required="">
                         <span style="color: red;"> 
-                            <br> ( Min Width: 915px, Min Height:  1000px )
+                            <br> ( Min Width: 300px, Min Height:  300px )
                         </span>
                         @if ($errors->has('productImage'))
                             @foreach($errors->get('productImage') as $error)
