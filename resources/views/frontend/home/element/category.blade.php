@@ -13,7 +13,7 @@
     @foreach($category_list as $category)
         <div class="product-category col" data-animate="bounceInUp">
             <div class="col-inner">
-                <a href="product-category/grocery/index.html">                
+                <a href="{{ route('category.product',['id'=>$category->id,'name'=>str_replace(' ', '-', $category->categoryName)]) }}">                
                     <div class="box box-category has-hover box-none ">
                         <div class="box-image" >
                             <div class="" >

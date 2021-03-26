@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2021 at 03:41 PM
+-- Generation Time: Mar 26, 2021 at 04:21 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -607,14 +607,15 @@ INSERT INTO `customer_group_sections` (`id`, `productId`, `customerGroupId`, `cu
 (20, 29, NULL, NULL, NULL, NULL),
 (21, 60, NULL, NULL, NULL, NULL),
 (23, 49, NULL, NULL, NULL, NULL),
-(46, 8, NULL, NULL, NULL, NULL),
-(47, 9, NULL, NULL, NULL, NULL),
-(50, 13, NULL, NULL, NULL, NULL),
 (79, 17, NULL, NULL, NULL, NULL),
 (81, 12, NULL, NULL, NULL, NULL),
-(82, 11, NULL, NULL, NULL, NULL),
 (100, 10, NULL, NULL, NULL, NULL),
-(101, 18, NULL, NULL, NULL, NULL);
+(101, 18, NULL, NULL, NULL, NULL),
+(102, 11, NULL, NULL, NULL, NULL),
+(103, 9, NULL, NULL, NULL, NULL),
+(104, 14, NULL, NULL, NULL, NULL),
+(105, 13, NULL, NULL, NULL, NULL),
+(106, 8, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1103,13 +1104,13 @@ CREATE TABLE `product_advance` (
 
 INSERT INTO `product_advance` (`id`, `productId`, `productSection`, `hotDiscount`, `hotDate`, `specialDiscount`, `specialDate`, `free_shipping`, `pre_order`, `pre_orderDuration`, `related_product`, `created_at`, `updated_at`) VALUES
 (7, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-02-23 01:18:28', '2020-02-23 01:18:28'),
-(8, 8, '1', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:24:00', '2020-02-25 05:16:37'),
-(9, 9, '1', '', '', '', '', NULL, NULL, NULL, '8,10,13,14,6,5', '2020-02-24 22:25:32', '2020-02-25 05:16:49'),
+(8, 8, '3', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:24:00', '2021-03-26 15:20:57'),
+(9, 9, '3', '', '', '', '', NULL, NULL, NULL, '10,13,14,8', '2020-02-24 22:25:32', '2021-03-26 15:20:26'),
 (10, 10, '1,6', '200', '17-06-2020', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:34:30', '2020-06-08 22:14:32'),
-(11, 11, '4', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:45:33', '2020-06-07 04:41:57'),
+(11, 11, '3', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:45:33', '2021-03-26 15:19:15'),
 (12, 12, '1,3,6', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:46:35', '2020-06-07 03:40:34'),
-(13, 13, '2', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:47:56', '2020-02-25 05:31:25'),
-(14, 14, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-02-24 22:49:11', '2020-02-24 22:49:11'),
+(13, 13, '3,2', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:47:56', '2021-03-26 15:20:49'),
+(14, 14, '3', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:49:11', '2021-03-26 15:20:38'),
 (17, 17, '1,3', '', '', '', '', NULL, NULL, NULL, NULL, '2020-03-01 09:47:02', '2020-06-07 02:03:12'),
 (18, 18, NULL, '', '', '1500', '24-06-2020', NULL, NULL, NULL, NULL, '2020-03-01 09:48:44', '2020-06-08 22:23:12');
 
@@ -1181,7 +1182,7 @@ CREATE TABLE `product_sections` (
 --
 
 INSERT INTO `product_sections` (`id`, `name`, `image_width`, `image_height`, `content_section`, `order_by`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'New Products', NULL, NULL, 'top_content', 1, 1, '2020-06-03 00:20:07', '2020-06-07 03:56:33'),
+(1, 'New Products', NULL, NULL, 'top_content', 1, 0, '2020-06-03 00:20:07', '2021-03-26 15:14:51'),
 (2, 'Special Offer', NULL, NULL, 'side_content', 5, 1, '2020-06-07 05:09:22', '2020-06-07 05:09:22'),
 (3, 'Featured Product', NULL, NULL, 'top_content', 2, 1, '2020-06-03 01:00:57', '2020-06-05 23:12:21'),
 (4, 'Other\'s Section Product', NULL, NULL, 'bottom_content', 3, 1, '2020-06-03 01:01:12', '2020-06-07 04:34:22'),
@@ -2680,7 +2681,7 @@ ALTER TABLE `customer_groups`
 -- AUTO_INCREMENT for table `customer_group_sections`
 --
 ALTER TABLE `customer_group_sections`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `faqs`
