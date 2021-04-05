@@ -3,7 +3,7 @@
         <b></b>
         <span class="section-title-main" style="font-size:115%;color:rgb(0, 0, 0);"> Product Groups </span>
         <b></b>
-        <a href="shop/index.html" target="">
+        <a href="{{route('shop')}}">
             Buy Now
             <i class="icon-angle-right" ></i>
         </a>
@@ -18,10 +18,13 @@
                         <div class="box-image" >
                             <div class="" >
                                 @if (!file_exists(@$category->image))
-                                    <img src="{{ $noImage }}" width="300" height="300">
+                                    <img src="{{ $noImage }}" width="200" height="200">
                                 @else
                                     <img src="{{ asset('/').$category->image }}" width="300" height="300">
                                 @endif                                                      
+                            </div>
+                            <div>
+                                <h3 class="text-center">{{$category->categoryName}}</h3> 
                             </div>
                         </div>
                     </div>

@@ -35,16 +35,11 @@ class FrontendController extends Controller
       'meta_description' =>$metaInfo->metaDescription
     ];
 
-    // $slider_list = Slider::where('status',1)->orderBy('orderBy','ASC')->get();
     $firstBannerList = Slider::where('status',1)->orderBy('orderBy','DESC')->limit(1)->get();
 
     $policy_list = Policy::where('policiesStatus','1')->orderBy('orderBy','ASC')->get();
 
-    // $firstBannerList = Banner::where('bannerStatus',1)
-    //                   ->orderBy('orderBy','ASC')
-    //                   ->whereBetween('orderBy', [1, 2])
-    //                   ->take(2)
-    //                   ->get();
+    
 
     $secondBannerList = Banner::where('bannerStatus',1)
                         ->orderBy('orderBy','ASC')

@@ -657,6 +657,7 @@ Route::get('/blog/{id}', 'BlogController@details')->name('blog.details');
 
 //Dynamic Menu or Page
 Route::get('/{menuName}/{menuId}', 'PageController@Page')->name('page.content');
+Route::get('/shop', 'ShopController@index')->name('shop');
 
 Route::get('/{anypath}', 'FrontendController@Page404')->where('path','.*');
 

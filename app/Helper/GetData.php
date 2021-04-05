@@ -63,29 +63,6 @@ class GetData
         return $data;
     }
 
-    /*public static function ProductInfo($productId){
-      $getImage = \App\Helper\GetData::GetProductImage($productId);
-      $getProductDetailsLink = \App\Helper\GetData::ProductDetailsLink($productId);
-      $getProductReview = \App\Helper\GetData::ProductReview($productId);
-
-      $stockCheck = \App\Helper\GetData::StockCheck($productId);
-      if($stockCheck->id != NULL && $stockCheck->remainingQty == 0 || $stockCheck->remainingQty < 0){
-        $disabled = "disabled";
-        $availability = "Out of Stock";
-        $availabilityColor = "red";
-      }else{
-        $disabled = "";
-        $availability = "In Stock";
-        $availabilityColor = "green";
-      }
-
-      $array_name[] = {
-        'getProductDetailsLink' => $getProductDetailsLink,
-        'getProductReview' => $getProductReview,
-    };
-    return $array_name;
-    }*/
-
     public static function GetProductImage($productId,$section = null){
       if($section == null){
         $data = ProductImage::where('section','content')->where('productId',$productId)->first();
@@ -136,7 +113,6 @@ class GetData
                   ->where('products.stockUnit','1')
                   ->where('stock_valuation_report.productId',$id)
                   ->first();
-        
         return $stockOutReports;
     }
 
@@ -155,7 +131,6 @@ class GetData
                   ->where('parent',$parentId)
                   ->where($showin,1)
                   ->get();
-                  
       return $sub_menuList;
     }
 }

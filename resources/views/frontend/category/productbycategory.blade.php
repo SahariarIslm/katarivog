@@ -4,188 +4,109 @@
 @php
 use App\Product;
 use App\Category;
-
   $categoryId = $category->id;
-  $minPrice = Product::where('category_id',$categoryId)->orWhere('root_category',$categoryId)->min('price');
-  $maxPrice = Product::where('category_id',$categoryId)->orWhere('root_category',$categoryId)->max('price');
 @endphp
-  <input type="hidden" class="categoryId" value="{{@$category->id}}">
-  <input type="hidden" id="lowerPrice" value="{{$minPrice}}">
-  <input type="hidden" id="higherPrice" value="{{$maxPrice}}">
-  <input type="hidden" id="sortingBy" value="orderBy">
-  <input type="hidden" id="sortingOrder" value="desc">
-  <input type="hidden" id="productLimit" value="40">
-  <div class='row'>
-    <div class='col-md-3 sidebar'> 
-      @include('frontend.common.sidebar_category')
-      <div class="sidebar-module-container">
-        <div class="sidebar-filter"> 
-          {{-- <div class="sidebar-widget wow fadeInUp">
-            <h3 class="section-title">shop by</h3>
-            <div class="widget-header">
-              <h4 class="widget-title">Category</h4>
-            </div>
+<div class="row category-page-row">
+  @include('frontend.category.element.shop_sidebar')
+  <div class="col large-9">
+    <div class="shop-container">
+      <div class="woocommerce-notices-wrapper"></div>
+      <div class="products row row-small large-columns-4 medium-columns-3 small-columns-3 has-shadow row-box-shadow-2 row-box-shadow-5-hover has-equal-box-heights equalize-box">
+      @if(!empty($getProductList))
+      @foreach ($getProductList as $product)
+            @php
+              $getImage = \App\Helper\GetData::GetProductImage($product->id);
+              $getProductDetailsLink = \App\Helper\GetData::ProductDetailsLink($product->id);
+              $getProductReview = \App\Helper\GetData::ProductReview($product->id);
+              $stockCheck = \App\Helper\GetData::StockCheck($product->id);
+              if($stockCheck->id != NULL && $stockCheck->remainingQty == 0 || $stockCheck->remainingQty < 0){
+                $disabled = "disabled";
+                $availability = "Out of Stock";
+                $availabilityColor = "red";
+              }else{
+                $disabled = "";
+                $availability = "In Stock";
+                $availabilityColor = "green";
+              }
+              if($product->discount){
+                $price = $product->discount;
+              }else{
+                $price = $product->price;
+              }
+            @endphp
+        <div class="product-small col has-hover product type-product post-595 status-publish first instock product_cat-nuts-fruits product_tag-bangladesh product_tag-best product_tag-dates product_tag-medina product_tag-milky product_tag-organic product_tag-pure product_tag-saudi-arabia has-post-thumbnail shipping-taxable purchasable product-type-variable">
+          <div class="col-inner">
+            <div class="badge-container absolute left top z-1"></div>
 
-            <div class="sidebar-widget-body">
-              <div class="accordion">
-                <div class="accordion-group">
-                  <div class="accordion-heading"> 
-                    <a href="#collapseOne" data-toggle="collapse" class="accordion-toggle collapsed"> 
-                      Camera 
-                    </a> 
-                  </div>
-                  <div class="accordion-body collapse" id="collapseOne" style="height: 0px;">
-                    <div class="accordion-inner">
-                      <ul>
-                        <li><a href="#">gaming</a></li>
-                        <li><a href="#">office</a></li>
-                        <li><a href="#">kids</a></li>
-                        <li><a href="#">for women</a></li>
-                      </ul>
-                    </div> 
-                  </div>
+            <div class="product-small box ">
+                <div class="box-image">
+                    <div class="image-zoom">
+                        <a href="{{$getProductDetailsLink}}"> 
+                            @if(file_exists(@$getImage->images))
+                              <img width="300" height="300" src="{{asset($getImage->images)}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="{{asset($getImage->images)}}" sizes="(max-width: 300px) 100vw, 300px" /> 
+                            @else
+                              <img width="300" height="300" src="{{$noImage}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="{{$noImage}}" sizes="(max-width: 300px) 100vw, 300px" /> 
+                            @endif           
+                        </a>
+                    </div>
+                    <div class="image-tools is-small top right show-on-hover"></div>
+                    <div class="image-tools is-small hide-for-small bottom left show-on-hover"></div>
+                    <div class="image-tools grid-tools text-center hide-for-small bottom hover-slide-in show-on-hover">
+                        <a href="{{$getProductDetailsLink}}" data-quantity="1" class="add-to-cart-grid no-padding is-transparent product_type_variable add_to_cart_button" data-product_id="694" data-product_sku="THAISAUCE01" aria-label="Select options for &ldquo;Sweet &amp; Sour Chili Sauce&rdquo;" rel="nofollow">
+                            <div class="cart-icon tooltip is-small" title="Select options">
+                                <strong>+</strong>
+                            </div>
+                        </a>  
+                        <a class="quick-view" data-prod="694" href="#quick-view">Quick View</a>            
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div> --}}
-          @if(@$minPrice && @$maxPrice)
-            <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Price Slider</h4>
-              </div>
-              <div class="sidebar-widget-body m-t-10">
-                <div class="price-range-holder"> 
-                  <span class="min-max"> 
-                    <span class="pull-left">৳ <span id="minPrice">{{$minPrice}}</span></span> 
-                    <span class="pull-right">৳ <span id="maxPrice">{{$maxPrice}}</span></span> 
-                  </span>
-                  <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
-                  <input type="text" class="price-slider" id="priceRange" value="{{$minPrice}},{{$minPrice}}" >
+                <div class="box-text box-text-products text-center grid-style-2">
+                    <div class="title-wrapper">
+                        <p class="name product-title">
+                            <a href="{{$getProductDetailsLink}}">
+                                {{str_limit($product->name,35)}}
+                            </a>
+                        </p>
+                    </div>
+                    <div class="price-wrapper">
+                        <span class="price">
+                            <span class="woocommerce-Price-amount amount">
+                                <bdi>
+                                    <span class="woocommerce-Price-currencySymbol">
+                                        ৳ {{$product->price}}
+                                    </span>
+                                </bdi>
+                            </span>
+                        </span>
+                    </div>      
                 </div>
-                <a href="javascript:void(0)" class="lnk btn btn-primary" onclick="PriceRange()">Show Now</a> 
-              </div> 
             </div>
-          @endif
-
-        </div>
-      </div>
-    </div>
-    <div class='col-md-9'>
-      @if(file_exists($category->headerImage))
-      <div id="category" class="category-carousel text-xs">
-        <div class="item" id="categoryHeader">
-          <div class="image">
-            <img src="{{ asset($category->headerImage) }}" alt="" class="img-responsive"> 
           </div>
         </div>
-      </div>
+      @endforeach
+      @else
+      <div class="product-small col has-hover product type-product post-595 status-publish first instock product_cat-nuts-fruits product_tag-bangladesh product_tag-best product_tag-dates product_tag-medina product_tag-milky product_tag-organic product_tag-pure product_tag-saudi-arabia has-post-thumbnail shipping-taxable purchasable product-type-variable">
+          <div class="col-inner text-center">
+            <div class="product-small box">
+                <div class="text-center" style="margin: auto;">
+                    <h3>No Product Available</h3>
+                </div>
+            </div>
+          </div>
+        </div>
       @endif
-
-      <div class="clearfix filters-container m-t-10">
-        <div class="row">
-          <div class="col col-sm-6 col-md-2">
-            <div class="filter-tabs">
-              <ul id="filter-tabs" class="nav nav-tabs nav-tab-box nav-tab-fa-icon">
-                <li class="active"> <a data-toggle="tab" href="#grid-container">
-                  <i class="icon fa fa-th-large"></i>
-                    Grid
-                  </a> 
-                </li>
-                <li>
-                  <a data-toggle="tab" href="#list-container">
-                  <i class="icon fa fa-th-list"></i>
-                    List
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col col-sm-12 col-md-6">
-            <div class="col col-sm-3 col-md-7 no-padding">
-              <div class="lbl-cnt"> 
-                <span class="lbl">Sort by</span>
-                <select style="width: 150px" id="sortBy">
-                  <option value="orderBy,asc">Position</option>
-                  <option value="name,asc">Product Name: A to Z</option>
-                  <option value="price,desc">Price: Hight to Low</option>
-                  <option value="price,asc">Price: Low to High</option>
-                  <option value="discount,desc">Discount: High to Low</option>
-                  <option value="discount,asc">Discount: Low to High</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="col col-sm-3 col-md-5 no-padding">
-              <div class="lbl-cnt"> <span class="lbl">Show</span>
-                <select style="width: 50px" id="selectProductLimit">
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option selected value="40">40</option>
-                  <option value="60">60</option>
-                  <option value="80">80</option>
-                  <option value="100">100</option>
-                  <option value="0">All</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="col col-sm-6 col-md-4 text-right">
-            <div class="pagination-container categoryProductPaginate">
-
-            </div>
-          </div> 
-        </div> 
       </div>
-      <div class="search-result-container ">
-        <div id="myTabContent" class="tab-content category-list">
-          <div class="tab-pane active " id="grid-container">
-            <div class="category-product">
-              <div class="row" id="gridProduct">
-
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-pane" id="list-container">
-            <div class="category-product" id="listProduct">
-
-            </div>
-          </div>
-        </div>
-
-        <!-- /.tab-content -->
-        <div class="clearfix filters-container">
-          <div class="text-right">
-            <div class="pagination-container categoryProductPaginate">
-              
-            </div>
-          </div>
-        </div>
+      <!-- row -->
+      <div class="container">
+        <nav class="woocommerce-pagination">
+          <ul class="page-numbers nav-pagination links text-center">
+            <li><span aria-current="page" class="page-number current">1</span></li>
+            <li><a class="page-number" href="page/2/index.html">2</a></li>
+            <li><a class="next page-number" href="page/2/index.html"><i class="icon-angle-right"></i></a></li>
+          </ul>
+        </nav>
       </div>
-    </div> 
+    </div><!-- shop container -->   
   </div>
-@endsection
-
-@section('custom_js')
-  <script type="text/javascript">
-    jQuery(function () {
-
-  // Price Slider
-      if (jQuery('.price-slider').length > 0) {
-          jQuery('.price-slider').slider({
-              min: {{$minPrice}},
-              max: {{$maxPrice}},
-              step: 10,
-              value: [{{$minPrice}}, {{$maxPrice}}],
-              handle: "square",
-
-          });
-
-          /*$( ".slider-handle" ).keyup(function() {
-            alert( "Handler for .change() called." );
-          });*/
-      }
-  });
-  </script>
+</div>
 @endsection

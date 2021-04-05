@@ -38,6 +38,7 @@
             <div class="product-small col has-hover product type-product post-694 status-publish first instock product_cat-homemade-pickle product_tag-bangladesh product_tag-best product_tag-deshi product_tag-milky product_tag-organic product_tag-pure product_tag-spice has-post-thumbnail featured shipping-taxable purchasable product-type-variable">
                 <div class="col-inner">
                     <div class="badge-container absolute left top z-1"></div>
+
                     <div class="product-small box ">
                         <div class="box-image">
                             <div class="image-zoom">
@@ -81,6 +82,7 @@
                             </div>      
                         </div>
                     </div>
+                    
                 </div>
             </div>
         @endforeach

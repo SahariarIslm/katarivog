@@ -14,6 +14,15 @@ class CategoryController extends Controller
 {
   public function ProductByCategory($id){
      $category = Category::where('id',$id)->first();
+     $getProductList = DB::table('product_advance')
+                  ->select('product_advance.productId','product_advance.productSection','products.*')
+                  ->join('products','products.id','=','product_advance.productId')
+                  ->where('products.category_id',$id)
+                  ->where('status',1)
+                  ->orderBy('orderBy','ASC')
+                  ->get();
+      // dd($getProductList);
+      $category_list = Category::where('categoryStatus',1)->orderBy('orderBy','ASC')->get();
      $metaTag =[
         'meta_keyword'=>$category->metaKeyword,
         'meta_title' =>$category->metaTitle,
@@ -22,7 +31,7 @@ class CategoryController extends Controller
 
      $title = $category->categoryName;
 
-     return view('frontend.category.productbycategory')->with(compact('metaTag','title','category'));
+     return view('frontend.category.productbycategory')->with(compact('metaTag','title','category','getProductList','category_list'));
   }
 
   public function GetCategoryProduct(Request $request){

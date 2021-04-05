@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2021 at 04:21 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Apr 05, 2021 at 05:26 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -299,10 +298,7 @@ INSERT INTO `categories` (`id`, `parent`, `categoryName`, `headerImage`, `origin
 (3, 2, 'Dresses', NULL, NULL, NULL, NULL, 1, 1, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, '2020-06-06 00:00:13', '2020-06-07 01:04:51'),
 (4, 1, 'Women', NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, '2020-06-06 00:01:04', '2020-06-06 00:01:19'),
 (5, 4, 'Handbags', NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, '2020-06-06 00:01:53', '2020-06-06 01:21:09'),
-(6, NULL, 'Watches', NULL, NULL, NULL, 'fa fa-laptop', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, '2020-06-06 00:56:38', '2020-06-06 01:38:24'),
-(7, NULL, 'Dairy', NULL, 'images/categories/original_image/Icons-for-milky-02-300x300_3797112319.png', 'images/categories/image/Icons-for-milky-02-300x300_28678492053.png', NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 1, '2021-03-26 13:48:27', '2021-03-26 13:48:27'),
-(8, NULL, 'Grocery', NULL, 'images/categories/original_image/Icons-for-milky-03-300x300_51206066332.png', 'images/categories/image/Icons-for-milky-03-300x300_28009258934.png', NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 1, '2021-03-26 13:50:44', '2021-03-26 13:50:44'),
-(9, NULL, 'Herbal & Grain', NULL, 'images/categories/original_image/Mango-Pickle-Ball-Homemade_62876926094.jpg', 'images/categories/image/Mango-Pickle-Ball-Homemade_14599170753.jpg', NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, 1, '2021-03-26 13:51:53', '2021-03-26 13:51:53');
+(6, NULL, 'Watches', NULL, NULL, NULL, 'fa fa-laptop', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, '2020-06-06 00:56:38', '2020-06-06 01:38:24');
 
 -- --------------------------------------------------------
 
@@ -550,8 +546,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `email`, `mobile`, `dob`, `address`, `gender`, `password`, `confirmPassword`, `clientGroup`, `delivery_zone_id`, `verify_token`, `created_at`, `updated_at`) VALUES
-(1, 'Tes Case', 'info@bis.com.bd', '2534534544', NULL, 'Dhaka,Bangladesh', NULL, NULL, NULL, NULL, NULL, NULL, '2020-06-08 03:47:43', '2020-06-08 03:47:43'),
-(2, 'Uk & Urope', 'jisanahmed06@gmail.com', '01834838457', NULL, 'Uttara', NULL, 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, NULL, NULL, '2020-06-08 03:52:04', '2020-06-08 03:52:04');
+(5, 'Sahariar', 'dhruv.islam7584@gmail.com', '01909642730', NULL, 'House #23, Road - 09', NULL, '47af6f04b99cbb49ec1f2fa0c8b30500', '47af6f04b99cbb49ec1f2fa0c8b30500', NULL, NULL, NULL, '2021-04-03 17:49:59', '2021-04-03 17:49:59');
 
 -- --------------------------------------------------------
 
@@ -607,15 +602,14 @@ INSERT INTO `customer_group_sections` (`id`, `productId`, `customerGroupId`, `cu
 (20, 29, NULL, NULL, NULL, NULL),
 (21, 60, NULL, NULL, NULL, NULL),
 (23, 49, NULL, NULL, NULL, NULL),
+(46, 8, NULL, NULL, NULL, NULL),
+(47, 9, NULL, NULL, NULL, NULL),
+(50, 13, NULL, NULL, NULL, NULL),
 (79, 17, NULL, NULL, NULL, NULL),
 (81, 12, NULL, NULL, NULL, NULL),
+(82, 11, NULL, NULL, NULL, NULL),
 (100, 10, NULL, NULL, NULL, NULL),
-(101, 18, NULL, NULL, NULL, NULL),
-(102, 11, NULL, NULL, NULL, NULL),
-(103, 9, NULL, NULL, NULL, NULL),
-(104, 14, NULL, NULL, NULL, NULL),
-(105, 13, NULL, NULL, NULL, NULL),
-(106, 8, NULL, NULL, NULL, NULL);
+(101, 18, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -790,23 +784,24 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `root_menu`, `parent`, `menuName`, `articleName`, `parentArticle`, `firstHomeTitle`, `firstHomeImage`, `homeDescription`, `urlLink`, `menuIcon`, `metaTitle`, `metaKeyword`, `metaDescription`, `orderBy`, `menuStatus`, `showInMenu`, `showInFooterMenu`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL, 'Customer Service', 'Customer Service', NULL, 'Customer Service', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 04:54:23', '2020-06-09 05:30:32'),
 (2, NULL, NULL, 'Corporation', 'Corporation', NULL, 'Corporation', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 2, 1, '0', '1', '2020-06-09 04:58:44', '2020-06-09 04:58:44'),
 (3, NULL, NULL, 'Why Choose Us', 'Why Choose Us', NULL, 'Why Choose Us', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 04:59:53', '2020-06-09 04:59:53'),
-(4, NULL, NULL, 'My Account', 'My Account', 1, 'My Account', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:03:24', '2021-03-26 14:18:33'),
+(4, 1, 1, 'My Account', 'My Account', 1, 'My Account', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:03:24', '2020-06-09 05:03:24'),
 (5, 1, 1, 'Order History', 'Order History', 1, 'Order History', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 2, 1, '0', '1', '2020-06-09 05:10:12', '2020-06-09 05:10:12'),
-(6, NULL, NULL, 'FAQ', 'Frequently Asked Questions', 1, 'Frequently Asked Questions', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 05:10:34', '2021-03-26 14:19:27'),
-(7, NULL, NULL, 'Specials', 'Specials', 1, 'Specials', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 4, 1, '0', '1', '2020-06-09 05:11:05', '2021-03-26 14:30:53'),
-(8, NULL, NULL, 'About Us', 'About us', 2, 'About us', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:11:34', '2021-03-26 14:20:35'),
+(6, 1, 1, 'FAQ', 'Frequently Asked Questions', 1, 'Frequently Asked Questions', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 05:10:34', '2020-06-09 06:55:13'),
+(7, 1, 1, 'Specials', 'Specials', 1, 'Specials', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 4, 1, '0', '1', '2020-06-09 05:11:05', '2020-06-09 05:11:05'),
+(8, 2, 2, 'About Us', 'About us', 2, 'About us', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:11:34', '2020-06-09 05:11:34'),
 (9, 2, 2, 'Customer Service', 'Customer Service', 2, 'Customer Service', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 2, 1, '0', '1', '2020-06-09 05:11:50', '2020-06-09 05:11:50'),
 (10, 2, 2, 'Company', 'Company', 2, 'Company', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 05:12:10', '2020-06-09 05:12:10'),
 (11, 2, 2, 'Investor Relations', 'Investor Relations', 2, 'Investor Relations', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 4, 1, '0', '1', '2020-06-09 05:13:00', '2020-06-09 05:13:00'),
 (12, 2, 2, 'Advanced Search', 'Advanced Search', 2, 'Advanced Search', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 5, 1, '0', '1', '2020-06-09 05:13:23', '2020-06-09 05:13:23'),
-(13, NULL, NULL, 'Shopping Guide', 'Shopping Guide', 3, 'Shopping Guide', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:15:27', '2021-03-26 14:35:17'),
+(13, 3, 3, 'Shopping Guide', 'Shopping Guide', 3, 'Shopping Guide', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 1, 1, '0', '1', '2020-06-09 05:15:27', '2020-06-09 05:15:27'),
 (14, 3, 3, 'Blog', 'Blog', 3, 'Blog', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 2, 1, '0', '1', '2020-06-09 05:15:45', '2020-06-09 05:15:45'),
 (15, 3, 3, 'Company', 'Company', 3, 'Company', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 3, 1, '0', '1', '2020-06-09 05:16:23', '2020-06-09 05:16:23'),
 (16, 3, 3, 'Investor Relations', 'Investor Relations', 3, 'Investor Relations', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 4, 1, '0', '1', '2020-06-09 05:17:22', '2020-06-09 05:17:22'),
 (17, 3, 3, 'Contact Us', 'Contact Us', 3, 'Contact Us', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 5, 1, '0', '1', '2020-06-09 05:17:46', '2020-06-09 05:17:46'),
-(18, NULL, NULL, 'Help Center', 'Help Center', 1, 'Help Center', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 5, 1, '0', '1', '2020-06-09 05:59:44', '2021-03-26 14:28:53');
+(18, 1, 1, 'Help Center', 'Help Center', 1, 'Help Center', NULL, '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', NULL, NULL, NULL, NULL, NULL, 5, 1, '0', '1', '2020-06-09 05:59:44', '2020-06-09 05:59:44');
 
 -- --------------------------------------------------------
 
@@ -1065,16 +1060,17 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `root_category`, `name`, `description1`, `description2`, `deal_code`, `phone_no`, `qty`, `reorder_qty`, `stockUnit`, `weight`, `price`, `discount`, `status`, `youtubeLink`, `productSection`, `tag`, `metaTitle`, `metaKeyword`, `metaDescription`, `orderBy`, `created_at`, `updated_at`) VALUES
-(7, '9', 9, 'Black Berth-able', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'glaps101', NULL, NULL, 5, NULL, NULL, 2000, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 7, '2020-02-23 01:18:28', '2020-02-23 05:19:02'),
-(8, '2', NULL, 'Fresh Fruit', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'gym101', NULL, NULL, 5, NULL, NULL, 1000, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, '2020-02-24 22:23:59', '2020-06-08 03:54:57'),
-(9, '3', 2, 'Al Haramain Badar Concentrated Pure Perfume 15 ml (For Men)', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'per133', NULL, NULL, 5, NULL, NULL, 486, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2020-02-24 22:25:32', '2020-06-13 04:44:31'),
-(10, '14', NULL, 'Al-Nuaim World Black 6ml Attar Roll On (Exclusive Series)                                     }', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'roll015', NULL, NULL, 5, NULL, NULL, 250, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 7, '2020-02-24 22:34:30', '2020-02-24 22:34:30'),
-(11, '14', NULL, 'AUTO BIOGRAPHY - EAU DE PERFUME - PARIS CORNER', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'per345', NULL, NULL, 5, NULL, NULL, 2500, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 6, '2020-02-24 22:45:33', '2020-02-24 22:45:33'),
-(12, '4', NULL, 'Be Eau De Toilette for Men - 100ml', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'oil1333', NULL, NULL, 5, NULL, NULL, 2500, 2000.00, 1, NULL, NULL, NULL, NULL, NULL, NULL, 8, '2020-02-24 22:46:35', '2020-06-07 03:48:40'),
-(13, '14', NULL, 'BROWN ORCHID FOR MEN - 80 ML', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'orc901', NULL, NULL, 5, NULL, NULL, 1700, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 9, '2020-02-24 22:47:56', '2020-02-24 22:47:56'),
-(14, '14', NULL, 'Calvin Klein Encounter Fresh EDT For Men -100ml', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'per150', NULL, NULL, 5, NULL, NULL, 5000, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 10, '2020-02-24 22:49:11', '2020-02-24 22:49:11'),
-(17, '3', NULL, 'Baseus Wireless Charging Pad', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br /><br />Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n</body>\r\n</html>', 'WXFD-01', NULL, NULL, 5, NULL, NULL, 1200, 1000.00, 1, NULL, NULL, NULL, 'sdfs', 'sdfsdf', 'sdfdsds', 2, '2020-03-01 09:47:02', '2020-06-07 06:47:54'),
-(18, '9', NULL, 'Baseus Encok Wireless Bluetooth Earphone', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'S16', NULL, NULL, 5, NULL, NULL, 2050, 2000.00, 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, '2020-03-01 09:48:44', '2020-03-01 09:48:44');
+(7, '9', 9, 'Black Berth-able', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'glaps101', NULL, NULL, 5, NULL, NULL, 2000, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 7, '2020-02-23 01:18:28', '2020-02-23 05:19:02'),
+(8, '2', NULL, 'Fresh Fruit', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'gym101', NULL, NULL, 5, NULL, NULL, 1000, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, '2020-02-24 22:23:59', '2020-06-08 03:54:57'),
+(9, '3', 2, 'Al Haramain Badar Concentrated Pure Perfume 15 ml (For Men)', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'per133', NULL, NULL, 5, NULL, NULL, 486, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2020-02-24 22:25:32', '2020-06-13 04:44:31'),
+(10, '14', NULL, 'Al-Nuaim World Black 6ml Attar Roll On (Exclusive Series)                                     }', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'roll015', NULL, NULL, 5, NULL, NULL, 250, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 7, '2020-02-24 22:34:30', '2020-02-24 22:34:30'),
+(11, '14', NULL, 'AUTO BIOGRAPHY - EAU DE PERFUME - PARIS CORNER', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'per345', NULL, NULL, 5, NULL, NULL, 2500, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 6, '2020-02-24 22:45:33', '2020-02-24 22:45:33'),
+(12, '4', NULL, 'Be Eau De Toilette for Men - 100ml', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'oil1333', NULL, NULL, 5, NULL, NULL, 2500, 2000.00, 1, NULL, NULL, NULL, NULL, NULL, NULL, 8, '2020-02-24 22:46:35', '2020-06-07 03:48:40'),
+(13, '14', NULL, 'BROWN ORCHID FOR MEN - 80 ML', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'orc901', NULL, NULL, 5, NULL, NULL, 1700, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 9, '2020-02-24 22:47:56', '2020-02-24 22:47:56'),
+(14, '14', NULL, 'Calvin Klein Encounter Fresh EDT For Men -100ml', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'per150', NULL, NULL, 5, NULL, NULL, 5000, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 10, '2020-02-24 22:49:11', '2020-02-24 22:49:11'),
+(17, '3', NULL, 'Baseus Wireless Charging Pad', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'WXFD-01', NULL, NULL, 5, NULL, NULL, 1200, 1000.00, 1, NULL, NULL, NULL, 'sdfs', 'sdfsdf', 'sdfdsds', 2, '2020-03-01 09:47:02', '2020-06-07 06:47:54'),
+(18, '9', NULL, 'Baseus Encok Wireless Bluetooth Earphone', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', 'asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf asdgfasdas asdfgsdfasd sdfasdfasd sadfsadfs sdfsadfsdf sdfasdfsadfsdaf sdfsadf ', 'S16', NULL, NULL, 5, NULL, NULL, 2050, 2000.00, 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, '2020-03-01 09:48:44', '2020-03-01 09:48:44'),
+(19, '5', 4, 'sdfgasdfg', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>aeraser</p>\r\n</body>\r\n</html>', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>aerawerawe</p>\r\n</body>\r\n</html>', '564', NULL, NULL, 5, NULL, NULL, 756, 567.00, 1, 'asedraws', NULL, 'dsfsadf', NULL, NULL, NULL, 4567, '2021-04-03 17:53:05', '2021-04-03 17:53:05');
 
 -- --------------------------------------------------------
 
@@ -1104,15 +1100,16 @@ CREATE TABLE `product_advance` (
 
 INSERT INTO `product_advance` (`id`, `productId`, `productSection`, `hotDiscount`, `hotDate`, `specialDiscount`, `specialDate`, `free_shipping`, `pre_order`, `pre_orderDuration`, `related_product`, `created_at`, `updated_at`) VALUES
 (7, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-02-23 01:18:28', '2020-02-23 01:18:28'),
-(8, 8, '3', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:24:00', '2021-03-26 15:20:57'),
-(9, 9, '3', '', '', '', '', NULL, NULL, NULL, '10,13,14,8', '2020-02-24 22:25:32', '2021-03-26 15:20:26'),
+(8, 8, '1', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:24:00', '2020-02-25 05:16:37'),
+(9, 9, '1', '', '', '', '', NULL, NULL, NULL, '8,10,13,14,6,5', '2020-02-24 22:25:32', '2020-02-25 05:16:49'),
 (10, 10, '1,6', '200', '17-06-2020', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:34:30', '2020-06-08 22:14:32'),
-(11, 11, '3', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:45:33', '2021-03-26 15:19:15'),
+(11, 11, '4', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:45:33', '2020-06-07 04:41:57'),
 (12, 12, '1,3,6', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:46:35', '2020-06-07 03:40:34'),
-(13, 13, '3,2', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:47:56', '2021-03-26 15:20:49'),
-(14, 14, '3', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:49:11', '2021-03-26 15:20:38'),
+(13, 13, '2', '', '', '', '', NULL, NULL, NULL, NULL, '2020-02-24 22:47:56', '2020-02-25 05:31:25'),
+(14, 14, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-02-24 22:49:11', '2020-02-24 22:49:11'),
 (17, 17, '1,3', '', '', '', '', NULL, NULL, NULL, NULL, '2020-03-01 09:47:02', '2020-06-07 02:03:12'),
-(18, 18, NULL, '', '', '1500', '24-06-2020', NULL, NULL, NULL, NULL, '2020-03-01 09:48:44', '2020-06-08 22:23:12');
+(18, 18, NULL, '', '', '1500', '24-06-2020', NULL, NULL, NULL, NULL, '2020-03-01 09:48:44', '2020-06-08 22:23:12'),
+(19, 19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-04-03 17:53:05', '2021-04-03 17:53:05');
 
 -- --------------------------------------------------------
 
@@ -1182,7 +1179,7 @@ CREATE TABLE `product_sections` (
 --
 
 INSERT INTO `product_sections` (`id`, `name`, `image_width`, `image_height`, `content_section`, `order_by`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'New Products', NULL, NULL, 'top_content', 1, 0, '2020-06-03 00:20:07', '2021-03-26 15:14:51'),
+(1, 'New Products', NULL, NULL, 'top_content', 1, 1, '2020-06-03 00:20:07', '2020-06-07 03:56:33'),
 (2, 'Special Offer', NULL, NULL, 'side_content', 5, 1, '2020-06-07 05:09:22', '2020-06-07 05:09:22'),
 (3, 'Featured Product', NULL, NULL, 'top_content', 2, 1, '2020-06-03 01:00:57', '2020-06-05 23:12:21'),
 (4, 'Other\'s Section Product', NULL, NULL, 'bottom_content', 3, 1, '2020-06-03 01:01:12', '2020-06-07 04:34:22'),
@@ -1484,7 +1481,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `siteTitle`, `siteName`, `titlePrefix`, `siteLogo`, `sitefavIcon`, `adminTitle`, `adminLogo`, `adminsmalLogo`, `adminfavIcon`, `mobile1`, `mobile2`, `siteEmail1`, `siteEmail2`, `siteAddress1`, `siteAddress2`, `sitestatus`, `metaTitle`, `metaKeyword`, `metaDescription`, `orderBy`, `created_at`, `updated_at`) VALUES
-(1, 'Best Services We Provide', 'Digital Gowala', '|', 'images/site_logo/logo/75092954_113568536751480_8022217701621497856_o_57661483985.jpg', 'images/site_logo/fav_icon/fav_icon_81706791684.png', 'Admin', 'images/admin_logo/main_logo/admin_logo_67633720599.png', 'images/admin_logo/small_logo/admin_smal_logo_90555701688.png', 'images/admin_logo/fav_icon/fav_icon_92365142475.png', '+88 01899990000', '+88 01899990001', 'digital@gmail.com', 'digital22@gmail.com', 'House #23, Road - 09, DIT Project', 'Merul Badda, Dhaka, Bangladesh', NULL, 'root || Bangladeshi Handicrafts Products', 'Handicrafts, Handicraft in Bangladesh , Nakshi Kantha , Nokshi Kantha , Nokshi Katha Design , Online Shopping BD, Salwar Kameez Bangladesh  , Handmade Jewelry, Online Shopping Bangladesh, Hater Kaj', 'Handicrafts  Item In Bangladesh, We have Nakshi Home Decor,  Nakshi ladies dress, Nakshi Kantha, Handmade item, wall hanging. handmade jewelry many more!', 1, NULL, '2020-06-10 02:24:01');
+(1, 'Best Services We Provide', 'Katarivod', '|', 'images/site_logo/logo/108126095_1642615422561583_4161005716578195675_o_72051476758.png', 'images/site_logo/fav_icon/fav_icon_81706791684.png', 'Admin', 'images/admin_logo/main_logo/108126095_1642615422561583_4161005716578195675_o_71224375355.png', 'images/admin_logo/small_logo/admin_smal_logo_90555701688.png', 'images/admin_logo/fav_icon/fav_icon_92365142475.png', '+88 01909642730', '+88 01899990001', 'digital@gmail.com', 'digital22@gmail.com', 'House #23, Road - 09', 'Merul Badda, Dhaka, Bangladesh', NULL, 'root || Bangladeshi Handicrafts Products', 'Handicrafts, Handicraft in Bangladesh , Nakshi Kantha , Nokshi Kantha , Nokshi Katha Design , Online Shopping BD, Salwar Kameez Bangladesh  , Handmade Jewelry, Online Shopping Bangladesh, Hater Kaj', 'Handicrafts  Item In Bangladesh, We have Nakshi Home Decor,  Nakshi ladies dress, Nakshi Kantha, Handmade item, wall hanging. handmade jewelry many more!', 1, NULL, '2021-03-15 17:42:01');
 
 -- --------------------------------------------------------
 
@@ -1539,7 +1536,7 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `firstTitle`, `secondTitle`, `description`, `image`, `productId`, `section`, `link`, `status`, `metaTitle`, `metaKeyword`, `metaDescription`, `orderBy`, `created_at`, `updated_at`) VALUES
-(1, 'Top Brands', 'New Collections', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>It\'s new for day</p>\r\n</body>\r\n</html>', 'images/sliders/01_140617020419.jpg', NULL, NULL, 'http://nijerbazar.com.bd/', 1, NULL, NULL, NULL, 1, '2020-06-06 03:31:19', '2020-06-06 03:53:16'),
+(1, 'Top Brands', 'New Collections', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p>It\'s new for day</p>\r\n</body>\r\n</html>', 'images/sliders/01_140617020419.jpg', NULL, NULL, 'http://nijerbazar.com.bd/', 1, NULL, NULL, NULL, 1, '2020-06-06 03:31:19', '2021-03-21 17:44:26'),
 (2, 'Spring 2020', 'Fresh Fruit', NULL, 'images/sliders/02_2398447059.jpg', NULL, NULL, NULL, 0, NULL, NULL, NULL, 2, '2020-06-06 03:33:23', '2020-06-06 03:56:48');
 
 -- --------------------------------------------------------
@@ -1745,7 +1742,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `delivery_zone_id`, `role`, `role_name`, `role_level`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Jisan Ahmed', 'jisanahmed06@gmail.com', 'jisan', NULL, 2, 'Super User', 1, '$2y$10$/et5nrWP1LuUjzw.oFWaI.jtQDJG.JPzFlFPIl5ZGe7ESaSDTAzoC', 1, NULL, '2019-08-30 21:43:55', '2020-04-01 20:55:07'),
+(1, 'Jisan Ahmed', 'jisanahmed06@gmail.com', 'jisan', NULL, 2, 'Super User', 1, '$2y$10$1KjPrsV3lVqxyASb/.mL8OVGS11eAfbakvpYegvY7.pxAeVZbos5K', 1, NULL, '2019-08-30 21:43:55', '2020-04-01 20:55:07'),
 (4, 'Admin', 'alfattah@gmail.com', 'Admin', NULL, 3, 'Admin', 2, '$2y$10$QPFPaSzVQ9NVki9O943GuO3RpY7ltC2pPz/mraYzaMFykP4M5XXsq', 1, 'HftBsS0WaFhNaeki9GEnbTOdo99h14G9dS1WtBq9AJJkzUuSyNKsUxMufhEx', '2019-04-17 01:04:35', '2020-04-01 20:54:46');
 
 -- --------------------------------------------------------
@@ -2051,7 +2048,7 @@ CREATE TABLE `user_roles` (
 --
 
 INSERT INTO `user_roles` (`id`, `parentRole`, `level`, `name`, `status`, `permission`, `actionPermission`, `created_at`, `updated_at`) VALUES
-(2, NULL, 1, 'Super User', 1, '3,13,14,15,16,17,41,55,77,82,6,7,8,10,11,86,43,49,62,52,12,53,54,56,57,36,37,38,39,40,81,18,19,20,21,22,23,24,26,28,32,34,84,85', '8,9,14,15,4,7,5,6,13,16,17,18,19,20,21,22,23,68,69,70,71,118,119,120,161,162,163,164,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,112,113,114,115,116,117,121,122,123,55,56,57,86,58,64,65,66,67,87,59,60,61,62,88,24,25,26,27,28,29,34,35,40,41,42,43,36,37,38,39,147,148,149,150,152,142,44,50,52,53,51,89,165,166,167,168,169,170,171,172', '2019-04-17 00:50:05', '2021-03-26 13:43:46'),
+(2, NULL, 1, 'Super User', 1, '3,13,14,15,16,17,41,55,77,82,6,7,8,10,11,86,43,42,44,45,46,47,48,62,51,63,64,65,66,68,12,52,53,54,56,57,58,59,60,69,70,72,75,76,49,50,67,71,73,74,36,37,38,39,40,81,18,19,20,21,22,23,24,26,28,32,34,84,85', '8,9,14,15,7,5,6,13,16,17,18,19,20,21,22,23,68,69,70,71,118,119,120,161,162,163,164,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,10,11,12,72,73,74,75,76,77,79,78,80,81,82,83,84,85,107,108,109,110,128,129,130,131,133,112,113,114,115,116,117,121,122,123,124,125,126,134,135,137,140,141,111,132,136,138,139,55,56,57,86,58,64,65,66,67,87,59,60,61,62,88,24,25,26,27,28,29,34,35,40,41,42,43,36,37,38,39,147,148,149,150,152,142,44,50,52,53,51,89,165,166,167,168,169,170,171,172', '2019-04-17 00:50:05', '2020-06-17 04:39:21'),
 (3, 2, 2, 'Admin', 1, '3,6,7,8,10,11,12,13,14,15,16,17,41,55,18,19,21,22,23,24,26,36,37,39,40,81,43,42,44,45,46,47,48,49,50,67,71,73,74,52,53,54,56,57,58,59,60,69,70,72,75,76,62,51,63,64,65,66,68,77,78,79,80', '90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,8,9,14,15,4,7,5,6,13,16,17,18,19,20,21,22,23,68,69,70,71,118,119,120,28,29,34,35,40,41,42,43,36,37,38,39,147,148,149,150,152,64,65,66,67,87,59,60,61,62,88,10,11,12,72,73,74,75,76,77,79,78,80,81,82,83,84,85,107,108,109,111,132,136,138,139,112,113,114,115,116,117,121,122,123,124,125,126,134,135,137,140,141,110,128,129,130,131,133,143,144,145,146,157,158,159,160,153,154,155,156', '2019-04-17 00:52:54', '2020-04-01 21:00:10');
 
 -- --------------------------------------------------------
@@ -2107,8 +2104,7 @@ CREATE TABLE `verify_customers` (
 --
 
 INSERT INTO `verify_customers` (`id`, `name`, `email`, `mobile`, `address`, `gender`, `password`, `confirmPassword`, `verifyCode`, `created_at`, `updated_at`) VALUES
-(0, 'Jisan Ahmed', 'jisan@gmail.com', '+8801973015495', NULL, NULL, 'e10adc3949ba59abbe56e057f20f883e', 'e10adc3949ba59abbe56e057f20f883e', '3797046', '2020-06-09 02:19:06', '2020-06-09 02:19:06'),
-(1, 'Kawsar Ahmed Parvez', 'parveznimsar@gmail.com', '1682875065', 'La-Montana,House:33,Sector:11,Road:Gareeb-e-newaz,Uttara,Dhaka-1230,Bangladesh.', NULL, '73772ba6483341303ba2cfb69bbe2b3e', '73772ba6483341303ba2cfb69bbe2b3e', '7144808', '2020-03-08 17:32:42', '2020-03-08 17:32:42');
+(0, 'Sahariar', 'dhruv.islam7584@gmail.com', '123456789', 'House #23, Road - 09', NULL, '789bb7736edc0318438083384673236e', '789bb7736edc0318438083384673236e', '8269589', '2021-03-21 16:09:53', '2021-03-21 16:09:53');
 
 -- --------------------------------------------------------
 
@@ -2142,7 +2138,7 @@ INSERT INTO `zone` (`id`, `name`, `bn_name`, `created_at`, `updated_at`) VALUES
 --
 DROP TABLE IF EXISTS `client_statement_report`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `client_statement_report`  AS  select `credit_sales`.`customer_id` AS `customerId`,`credit_sales`.`payment_type` AS `type`,`credit_sales`.`invoice_date` AS `date`,`credit_sales`.`net_amount` AS `sales`,0 AS `collection`,0 AS `others`,`credit_sales`.`delivery_zone_id` AS `delivery_zone_id` from `credit_sales` union all select `credit_collections`.`client_id` AS `customerId`,'Collection' AS `type`,`credit_collections`.`payment_date` AS `date`,0 AS `sales`,`credit_collections`.`payment_amount` AS `collection`,0 AS `others`,`credit_collections`.`delivery_zone_id` AS `delivery_zone_id` from `credit_collections` order by `type`,`customerId` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `client_statement_report`  AS SELECT `credit_sales`.`customer_id` AS `customerId`, `credit_sales`.`payment_type` AS `type`, `credit_sales`.`invoice_date` AS `date`, `credit_sales`.`net_amount` AS `sales`, 0 AS `collection`, 0 AS `others`, `credit_sales`.`delivery_zone_id` AS `delivery_zone_id` FROM `credit_sales` ;
 
 -- --------------------------------------------------------
 
@@ -2151,7 +2147,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `product_wise_profit`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `product_wise_profit`  AS  select `cash_sales`.`invoice_date` AS `date`,`products`.`id` AS `productId`,`products`.`category_id` AS `categoryId`,`cash_sale_items`.`item_quantity` AS `cashProductQty`,`cash_sale_items`.`item_price` AS `cashPriceAmount`,`cash_sale_items`.`item_price` * 4.5 / 100 AS `cashVatAmount`,`cash_sale_items`.`item_price` * `cash_sales`.`discount_as` / 100 AS `cashDiscountAmount`,0 AS `creditProductQty`,0 AS `creditPriceAmount`,0 AS `creditVatAmount`,0 AS `creditDiscountAmount`,`cash_sales`.`delivery_zone_id` AS `delivery_zone_id` from ((`cash_sales` join `cash_sale_items` on(`cash_sale_items`.`cash_sale_id` = `cash_sales`.`id`)) join `products` on(`products`.`id` = `cash_sale_items`.`item_id`)) union all select `credit_sales`.`invoice_date` AS `date`,`products`.`id` AS `productId`,`products`.`category_id` AS `categoryId`,0 AS `cashProductQty`,0 AS `cashPriceAmount`,0 AS `cashVatAmount`,0 AS `cashDiscountAmount`,`credit_sale_items`.`item_quantity` AS `creditProductQty`,`credit_sale_items`.`item_price` AS `creditPriceAmount`,`credit_sale_items`.`item_price` * 4.5 / 100 AS `creditVatAmount`,`credit_sale_items`.`item_price` * `credit_sales`.`discount_as` / 100 AS `creditDiscountAmount`,`credit_sales`.`delivery_zone_id` AS `delivery_zone_id` from ((`credit_sales` join `credit_sale_items` on(`credit_sale_items`.`credit_sale_id` = `credit_sales`.`id`)) join `products` on(`products`.`id` = `credit_sale_items`.`item_id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `product_wise_profit`  AS SELECT `cash_sales`.`invoice_date` AS `date`, `products`.`id` AS `productId`, `products`.`category_id` AS `categoryId`, `cash_sale_items`.`item_quantity` AS `cashProductQty`, `cash_sale_items`.`item_price` AS `cashPriceAmount`, `cash_sale_items`.`item_price`* 4.5 / 100 AS `cashVatAmount`, `cash_sale_items`.`item_price`* `cash_sales`.`discount_as` / 100 AS `cashDiscountAmount`, 0 AS `creditProductQty`, 0 AS `creditPriceAmount`, 0 AS `creditVatAmount`, 0 AS `creditDiscountAmount`, `cash_sales`.`delivery_zone_id` AS `delivery_zone_id` FROM ((`cash_sales` join `cash_sale_items` on(`cash_sale_items`.`cash_sale_id` = `cash_sales`.`id`)) join `products` on(`products`.`id` = `cash_sale_items`.`item_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -2160,7 +2156,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `purchase_order_status`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `purchase_order_status`  AS  select `purchase_orders`.`supplier_id` AS `supplierId`,`purchase_orders`.`order_no` AS `orderNo`,`purchase_orders`.`order_date` AS `date`,`purchase_order_items`.`product_id` AS `productId`,`purchase_orders`.`delivery_zone_id` AS `delivery_zone_id`,`purchase_order_items`.`qty` AS `orderQty`,0 AS `receiveQty` from (`purchase_orders` join `purchase_order_items` on(`purchase_order_items`.`purchase_order_id` = `purchase_orders`.`id`)) union all select `purchase_orders`.`supplier_id` AS `supplierId`,`purchase_orders`.`order_no` AS `orderNo`,`purchase_orders`.`order_date` AS `date`,`purchase_order_receive_items`.`product_id` AS `productId`,`purchase_orders`.`delivery_zone_id` AS `delivery_zone_id`,0 AS `orderQty`,`purchase_order_receive_items`.`qty` AS `receiveQty` from ((`purchase_order_receives` join `purchase_order_receive_items` on(`purchase_order_receive_items`.`purchase_order_receive_id` = `purchase_order_receives`.`id`)) join `purchase_orders` on(`purchase_orders`.`id` = `purchase_order_receives`.`purchaseOrderNo`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `purchase_order_status`  AS SELECT `purchase_orders`.`supplier_id` AS `supplierId`, `purchase_orders`.`order_no` AS `orderNo`, `purchase_orders`.`order_date` AS `date`, `purchase_order_items`.`product_id` AS `productId`, `purchase_orders`.`delivery_zone_id` AS `delivery_zone_id`, `purchase_order_items`.`qty` AS `orderQty`, 0 AS `receiveQty` FROM (`purchase_orders` join `purchase_order_items` on(`purchase_order_items`.`purchase_order_id` = `purchase_orders`.`id`)) ;
 
 -- --------------------------------------------------------
 
@@ -2169,7 +2165,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `sales_collection_standings`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sales_collection_standings`  AS  select `credit_sales`.`customer_id` AS `customerId`,`credit_sales`.`payment_type` AS `type`,`credit_sales`.`invoice_date` AS `date`,`credit_sales`.`net_amount` AS `sales`,0 AS `collection`,`credit_sales`.`delivery_zone_id` AS `delivery_zone_id` from `credit_sales` union all select `credit_collections`.`client_id` AS `customerId`,'Collection' AS `type`,`credit_collections`.`payment_date` AS `date`,0 AS `sales`,`credit_collections`.`payment_amount` AS `collection`,`credit_collections`.`delivery_zone_id` AS `delivery_zone_id` from `credit_collections` order by `type`,`customerId` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sales_collection_standings`  AS SELECT `credit_sales`.`customer_id` AS `customerId`, `credit_sales`.`payment_type` AS `type`, `credit_sales`.`invoice_date` AS `date`, `credit_sales`.`net_amount` AS `sales`, 0 AS `collection`, `credit_sales`.`delivery_zone_id` AS `delivery_zone_id` FROM `credit_sales` ;
 
 -- --------------------------------------------------------
 
@@ -2178,7 +2174,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `sales_contribution`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sales_contribution`  AS  select `products`.`category_id` AS `categoryId`,`cash_sale_items`.`item_id` AS `productId`,sum(`cash_sale_items`.`item_quantity`) AS `cashSaleQty`,sum(`cash_sale_items`.`item_price`) AS `cashSaleAmount`,0 AS `creditSaleQty`,0 AS `creditSaleAmount`,`cash_sale_items`.`delivery_zone_id` AS `delivery_zone_id` from (`cash_sale_items` join `products` on(`products`.`id` = `cash_sale_items`.`item_id`)) group by `cash_sale_items`.`item_id` union all select `products`.`category_id` AS `categoryId`,`credit_sale_items`.`item_id` AS `productId`,0 AS `cashSaleQty`,0 AS `cashSaleAmount`,sum(`credit_sale_items`.`item_quantity`) AS `creditSaleQty`,sum(`credit_sale_items`.`item_price`) AS `creditSaleAmount`,`credit_sale_items`.`delivery_zone_id` AS `delivery_zone_id` from (`credit_sale_items` join `products` on(`products`.`id` = `credit_sale_items`.`item_id`)) group by `credit_sale_items`.`item_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sales_contribution`  AS SELECT `products`.`category_id` AS `categoryId`, `cash_sale_items`.`item_id` AS `productId`, sum(`cash_sale_items`.`item_quantity`) AS `cashSaleQty`, sum(`cash_sale_items`.`item_price`) AS `cashSaleAmount`, 0 AS `creditSaleQty`, 0 AS `creditSaleAmount`, `cash_sale_items`.`delivery_zone_id` AS `delivery_zone_id` FROM (`cash_sale_items` join `products` on(`products`.`id` = `cash_sale_items`.`item_id`)) GROUP BY `cash_sale_items`.`item_id` ;
 
 -- --------------------------------------------------------
 
@@ -2187,7 +2183,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `stock_status_report`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `stock_status_report`  AS  select `purchase_orders`.`supplier_id` AS `supplierId`,`purchase_order_receives`.`receive_date` AS `date`,`products`.`category_id` AS `categoryId`,`purchase_order_receive_items`.`product_id` AS `productId`,`purchase_order_receive_items`.`qty` AS `receiveQty`,`purchase_order_receive_items`.`amount` AS `receiveAmount`,0 AS `cashSaleQty`,0 AS `creditSaleQty`,`purchase_orders`.`delivery_zone_id` AS `delivery_zone_id` from (((`purchase_orders` join `purchase_order_receives` on(`purchase_order_receives`.`purchaseOrderNo` = `purchase_orders`.`id`)) join `purchase_order_receive_items` on(`purchase_order_receive_items`.`purchase_order_receive_id` = `purchase_order_receives`.`id`)) join `products` on(`products`.`id` = `purchase_order_receive_items`.`product_id`)) union all select `purchase_orders`.`supplier_id` AS `supplierId`,`cash_sales`.`invoice_date` AS `date`,`products`.`category_id` AS `categoryId`,`cash_sale_items`.`item_id` AS `productId`,0 AS `receiveQty`,0 AS `receiveAmount`,`cash_sale_items`.`item_quantity` AS `cashSaleQty`,0 AS `creditSaleQty`,`purchase_orders`.`delivery_zone_id` AS `delivery_zone_id` from (((((`purchase_orders` join `purchase_order_receives` on(`purchase_order_receives`.`purchaseOrderNo` = `purchase_orders`.`id`)) join `purchase_order_receive_items` on(`purchase_order_receive_items`.`purchase_order_receive_id` = `purchase_order_receives`.`id`)) join `products` on(`products`.`id` = `purchase_order_receive_items`.`product_id`)) join `cash_sale_items` on(`cash_sale_items`.`item_id` = `purchase_order_receive_items`.`product_id`)) join `cash_sales` on(`cash_sales`.`id` = `cash_sale_items`.`cash_sale_id`)) group by `purchase_orders`.`supplier_id`,`cash_sales`.`invoice_date`,`products`.`category_id`,`cash_sale_items`.`item_id` union all select `purchase_orders`.`supplier_id` AS `supplierId`,`credit_sales`.`invoice_date` AS `date`,`products`.`category_id` AS `categoryId`,`credit_sale_items`.`item_id` AS `productId`,0 AS `receiveQty`,0 AS `receiveAmount`,0 AS `cashSaleQty`,`credit_sale_items`.`item_quantity` AS `creditSaleQty`,`purchase_orders`.`delivery_zone_id` AS `delivery_zone_id` from (((((`purchase_orders` join `purchase_order_receives` on(`purchase_order_receives`.`purchaseOrderNo` = `purchase_orders`.`id`)) join `purchase_order_receive_items` on(`purchase_order_receive_items`.`purchase_order_receive_id` = `purchase_order_receives`.`id`)) join `products` on(`products`.`id` = `purchase_order_receive_items`.`product_id`)) join `credit_sale_items` on(`credit_sale_items`.`item_id` = `purchase_order_receive_items`.`product_id`)) join `credit_sales` on(`credit_sales`.`id` = `credit_sale_items`.`credit_sale_id`)) group by `purchase_orders`.`supplier_id`,`credit_sales`.`invoice_date`,`products`.`category_id`,`credit_sale_items`.`item_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `stock_status_report`  AS SELECT `purchase_orders`.`supplier_id` AS `supplierId`, `purchase_order_receives`.`receive_date` AS `date`, `products`.`category_id` AS `categoryId`, `purchase_order_receive_items`.`product_id` AS `productId`, `purchase_order_receive_items`.`qty` AS `receiveQty`, `purchase_order_receive_items`.`amount` AS `receiveAmount`, 0 AS `cashSaleQty`, 0 AS `creditSaleQty`, `purchase_orders`.`delivery_zone_id` AS `delivery_zone_id` FROM (((`purchase_orders` join `purchase_order_receives` on(`purchase_order_receives`.`purchaseOrderNo` = `purchase_orders`.`id`)) join `purchase_order_receive_items` on(`purchase_order_receive_items`.`purchase_order_receive_id` = `purchase_order_receives`.`id`)) join `products` on(`products`.`id` = `purchase_order_receive_items`.`product_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -2196,7 +2192,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `stock_valuation_report`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `stock_valuation_report`  AS  select `cash_purchase`.`supplier_id` AS `supplierId`,`products`.`category_id` AS `categoryId`,`cash_purchase_item`.`product_id` AS `productId`,`cash_purchase_item`.`qty` AS `cashPurchaseQty`,`cash_purchase_item`.`amount` AS `cashPurchaseAmount`,0 AS `creditPurchaseQty`,0 AS `creditPurchaseAmount`,0 AS `purchaseReturnQty`,0 AS `purchaseReturnAmount`,0 AS `cashSaleQty`,0 AS `cashSaleAmount`,0 AS `creditSaleQty`,0 AS `creditSaleAmount`,0 AS `salesReturnQty`,`cash_purchase`.`delivery_zone_id` AS `delivery_zone_id` from ((`cash_purchase_item` join `cash_purchase` on(`cash_purchase`.`id` = `cash_purchase_item`.`cash_puchase_id`)) join `products` on(`products`.`id` = `cash_purchase_item`.`product_id`)) union all select `credit_purchases`.`supplier_id` AS `supplierId`,`products`.`category_id` AS `categoryId`,`credit_purchase_items`.`product_id` AS `productId`,0 AS `cashPurchaseQty`,0 AS `cashPurchaseAmount`,`credit_purchase_items`.`qty` AS `creditPurchaseQty`,`credit_purchase_items`.`amount` AS `creditPurchaseAmount`,0 AS `purchaseReturnQty`,0 AS `purchaseReturnAmount`,0 AS `cashSaleQty`,0 AS `cashSaleAmount`,0 AS `creditSaleQty`,0 AS `creditSaleAmount`,0 AS `salesReturnQty`,`credit_purchases`.`delivery_zone_id` AS `delivery_zone_id` from ((`credit_purchase_items` join `credit_purchases` on(`credit_purchases`.`id` = `credit_purchase_items`.`credit_puchase_id`)) join `products` on(`products`.`id` = `credit_purchase_items`.`product_id`)) union all select `purchase_returns`.`supplier_id` AS `supplierId`,`products`.`category_id` AS `categoryId`,`purchase_return_items`.`product_id` AS `productId`,0 AS `cashPurchaseQty`,0 AS `cashPurchaseAmount`,0 AS `creditPurchaseQty`,0 AS `creditPurchaseAmount`,`purchase_return_items`.`qty` AS `purchaseReturnQty`,`purchase_return_items`.`amount` AS `purchaseReturnAmount`,0 AS `cashSaleQty`,0 AS `cashSaleAmount`,0 AS `creditSaleQty`,0 AS `creditSaleAmount`,0 AS `salesReturnQty`,`purchase_returns`.`delivery_zone_id` AS `delivery_zone_id` from ((`purchase_return_items` join `purchase_returns` on(`purchase_returns`.`id` = `purchase_return_items`.`purchase_return_id`)) join `products` on(`products`.`id` = `purchase_return_items`.`product_id`)) union all select 0 AS `supplierId`,`products`.`category_id` AS `categoryId`,`cash_sale_items`.`item_id` AS `productId`,0 AS `cashPurchaseQty`,0 AS `cashPurchaseAmount`,0 AS `creditPurchaseQty`,0 AS `creditPurchaseAmount`,0 AS `purchaseReturnQty`,0 AS `purchaseReturnAmount`,`cash_sale_items`.`item_quantity` AS `cashSaleQty`,`cash_sale_items`.`item_price` AS `cashSaleAmount`,0 AS `creditSaleQty`,0 AS `creditSaleAmount`,0 AS `salesReturnQty`,`cash_sale_items`.`delivery_zone_id` AS `delivery_zone_id` from (`cash_sale_items` join `products` on(`products`.`id` = `cash_sale_items`.`item_id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `stock_valuation_report`  AS SELECT `cash_purchase`.`supplier_id` AS `supplierId`, `products`.`category_id` AS `categoryId`, `cash_purchase_item`.`product_id` AS `productId`, `cash_purchase_item`.`qty` AS `cashPurchaseQty`, `cash_purchase_item`.`amount` AS `cashPurchaseAmount`, 0 AS `creditPurchaseQty`, 0 AS `creditPurchaseAmount`, 0 AS `purchaseReturnQty`, 0 AS `purchaseReturnAmount`, 0 AS `cashSaleQty`, 0 AS `cashSaleAmount`, 0 AS `creditSaleQty`, 0 AS `creditSaleAmount`, 0 AS `salesReturnQty`, `cash_purchase`.`delivery_zone_id` AS `delivery_zone_id` FROM ((`cash_purchase_item` join `cash_purchase` on(`cash_purchase`.`id` = `cash_purchase_item`.`cash_puchase_id`)) join `products` on(`products`.`id` = `cash_purchase_item`.`product_id`)) ;
 
 -- --------------------------------------------------------
 
@@ -2205,7 +2201,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `supplier_statement_report`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `supplier_statement_report`  AS  select `credit_purchases`.`type` AS `type`,`credit_purchases`.`voucher_date` AS `date`,sum(`credit_purchases`.`total_amount`) AS `lifting`,0 AS `payment`,0 AS `others`,`credit_purchases`.`supplier_id` AS `vendorId`,`credit_purchases`.`delivery_zone_id` AS `delivery_zone_id` from `credit_purchases` group by `credit_purchases`.`voucher_date`,`credit_purchases`.`supplier_id`,`credit_purchases`.`type` union select `cash_purchase`.`type` AS `type`,`cash_purchase`.`voucher_date` AS `date`,sum(`cash_purchase`.`total_amount`) AS `lifting`,0 AS `payment`,0 AS `others`,`cash_purchase`.`supplier_id` AS `vendorId`,`cash_purchase`.`delivery_zone_id` AS `delivery_zone_id` from `cash_purchase` group by `cash_purchase`.`voucher_date`,`cash_purchase`.`supplier_id`,`cash_purchase`.`type` union select `supplier_payments`.`payment_type` AS `type`,`supplier_payments`.`payment_date` AS `date`,0 AS `lifting`,sum(`supplier_payments`.`payment_now`) AS `payment`,0 AS `others`,`supplier_payments`.`supplier_id` AS `vendorId`,`supplier_payments`.`delivery_zone_id` AS `delivery_zone_id` from `supplier_payments` group by `supplier_payments`.`payment_date`,`supplier_payments`.`supplier_id`,`supplier_payments`.`payment_type` union select '' AS `type`,`purchase_returns`.`purchase_return_date` AS `date`,0 AS `lifting`,0 AS `payment`,sum(`purchase_returns`.`total_amount`) AS `others`,`purchase_returns`.`supplier_id` AS `vendorId`,`purchase_returns`.`delivery_zone_id` AS `delivery_zone_id` from `purchase_returns` group by `purchase_returns`.`purchase_return_date`,`purchase_returns`.`supplier_id` order by `date` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `supplier_statement_report`  AS SELECT `credit_purchases`.`type` AS `type`, `credit_purchases`.`voucher_date` AS `date`, sum(`credit_purchases`.`total_amount`) AS `lifting`, 0 AS `payment`, 0 AS `others`, `credit_purchases`.`supplier_id` AS `vendorId`, `credit_purchases`.`delivery_zone_id` AS `delivery_zone_id` FROM `credit_purchases` GROUP BY `credit_purchases`.`voucher_date`, `credit_purchases`.`supplier_id`, `credit_purchases`.`type` ;
 
 -- --------------------------------------------------------
 
@@ -2214,7 +2210,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `supply_payment_summery`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `supply_payment_summery`  AS  select `cash_purchase`.`supplier_id` AS `supplierId`,`cash_purchase`.`type` AS `type`,`cash_purchase`.`voucher_date` AS `date`,`cash_purchase`.`total_amount` AS `purchase`,`cash_purchase`.`total_amount` AS `payment`,`cash_purchase`.`delivery_zone_id` AS `delivery_zone_id` from `cash_purchase` union all select `credit_purchases`.`supplier_id` AS `supplierId`,`credit_purchases`.`type` AS `type`,`credit_purchases`.`voucher_date` AS `date`,`credit_purchases`.`total_amount` AS `purchase`,0 AS `payment`,`credit_purchases`.`delivery_zone_id` AS `delivery_zone_id` from `credit_purchases` union all select `purchase_orders`.`supplier_id` AS `supplierId`,'Order Receive' AS `type`,`purchase_order_receives`.`receive_date` AS `date`,`purchase_order_receives`.`total_amount` AS `purchase`,0 AS `payment`,`purchase_orders`.`delivery_zone_id` AS `delivery_zone_id` from (`purchase_orders` join `purchase_order_receives` on(`purchase_order_receives`.`purchaseOrderNo` = `purchase_orders`.`id`)) union all select `supplier_payments`.`supplier_id` AS `supplierId`,'Payment' AS `type`,`supplier_payments`.`payment_date` AS `date`,0 AS `purchase`,`supplier_payments`.`payment_now` AS `payment`,`supplier_payments`.`delivery_zone_id` AS `delivery_zone_id` from `supplier_payments` order by `type`,`supplierId` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `supply_payment_summery`  AS SELECT `cash_purchase`.`supplier_id` AS `supplierId`, `cash_purchase`.`type` AS `type`, `cash_purchase`.`voucher_date` AS `date`, `cash_purchase`.`total_amount` AS `purchase`, `cash_purchase`.`total_amount` AS `payment`, `cash_purchase`.`delivery_zone_id` AS `delivery_zone_id` FROM `cash_purchase` ;
 
 --
 -- Indexes for dumped tables
@@ -2615,7 +2611,7 @@ ALTER TABLE `cash_sale_items`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `client_entries`
@@ -2669,7 +2665,7 @@ ALTER TABLE `credit_sale_items`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `customer_groups`
@@ -2681,7 +2677,7 @@ ALTER TABLE `customer_groups`
 -- AUTO_INCREMENT for table `customer_group_sections`
 --
 ALTER TABLE `customer_group_sections`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `faqs`
@@ -2753,13 +2749,13 @@ ALTER TABLE `policies`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `product_advance`
 --
 ALTER TABLE `product_advance`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `product_images`
