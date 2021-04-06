@@ -97,10 +97,10 @@
 							                "dragThreshold" : 15,
 							                "pageDots": false,
 							                "rightToLeft": false       }'>
-	    							<div data-thumb="https://milkybd.com/wp-content/uploads/2020/06/Black-Seeds-কালোজিরা-100x100.jpg" class="woocommerce-product-gallery__image slide first">
-	    								<a href="../../wp-content/uploads/2020/06/Black-Seeds-%e0%a6%95%e0%a6%be%e0%a6%b2%e0%a7%8b%e0%a6%9c%e0%a6%bf%e0%a6%b0%e0%a6%be.jpg">
+	    							<div data-thumb="{{asset($getImage->images)}}" class="woocommerce-product-gallery__image slide first">
+	    								<a href="{{asset($getImage->images)}}">
 	    									@if(file_exists(@$getImage->images))
-	    									<img width="320" height="320" src="{{asset($getImage->images)}}" class="wp-post-image skip-lazy" srcset="{{asset($getImage->images)}}" alt=""/>
+	    									<img width="320" height="320" src="{{asset($getImage->images)}}" class="{{asset($getImage->images)}} 1200w" alt=""/>
 	    									@else
 	    									<img width="320" height="320" src="{{$noImage}}" class="wp-post-image skip-lazy" srcset="{{$noImage}}" alt=""/>
 	    									@endif
@@ -147,10 +147,7 @@
 											<input type="number" id="quantity_60518ed75b771" class="input-text qty text" step="1"min="1" max="" name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="numeric"/>
 											<input type="button" value="+" class="plus button is-form">	
 										</div>
-										<button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
-										<input type="hidden" name="add-to-cart" value="625"/>
-										<input type="hidden" name="product_id" value="625"/>
-										<input type="hidden" name="variation_id" class="variation_id" value="0"/>
+										<button type="submit" onclick="addCart('{{ $product->id}}','{{$price}}')" class="single_add_to_cart_button button alt">Add to cart</button>
 									</div>
 								</div>
 							</div>

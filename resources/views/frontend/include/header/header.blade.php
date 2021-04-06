@@ -64,7 +64,7 @@
           <!-- Header logo -->
               <a href="index.html" title="Milky - | Live Well |" rel="home">
                   <img width="142" height="75" src="{{ asset('/') }}/public/frontend/assets/wp-content/uploads/2020/10/rsz_milky_new_logo-01.png" class="header_logo header-logo" alt="Milky"/>
-                  <img  width="142" height="75" src="wp-content/uploads/2020/10/rsz_milky_new_logo-01.png" class="header-logo-dark" alt="Milky"/>
+                  <img  width="142" height="75" src="{{ asset('/') }}/public/frontend/assets/wp-content/uploads/2020/10/rsz_milky_new_logo-01.png" class="header-logo-dark" alt="Milky"/>
               </a>
           </div>
           <!-- Mobile Left Elements -->
@@ -189,7 +189,7 @@
                       </div>
                   </li>
                   <li class="header-divider"></li>
-                  <li class="cart-item has-icon has-dropdown">
+                  {{-- <li class="cart-item has-icon has-dropdown">
                       <a href="cart/index.html" title="Cart" class="header-cart-link is-small">
                           <span class="header-cart-title">
                              Cart   /      
@@ -197,13 +197,13 @@
                                   <span class="woocommerce-Price-amount amount">
                                       <bdi>
                                           <span class="woocommerce-Price-currencySymbol">&#2547;&nbsp;</span>
-                                          0
+                                          {{App\Helper\GetData::CartTotal()}}
                                       </bdi>
                                   </span>
                               </span>
                           </span>
                           <span class="cart-icon image-icon">
-                              <strong>0</strong>
+                              <strong>{{Cart::count()}}</strong>
                           </span>
                       </a>
                       <ul class="nav-dropdown nav-dropdown-default">
@@ -215,7 +215,50 @@
                               </div>
                           </li>
                       </ul>
-                  </li>
+                  </li> --}}
+                  <li class="cart-item has-icon has-dropdown">
+
+                    <a href="https://milkybd.com/cart/" title="Cart" class="header-cart-link is-small">
+
+
+                    <span class="header-cart-title">
+                       Cart   /       <span class="cart-price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>245</bdi></span></span>
+                      </span>
+
+                            <span class="cart-icon image-icon">
+                          <strong>2</strong>
+                        </span>
+                        
+                      </a>
+
+                     <ul class="nav-dropdown nav-dropdown-default" style="">
+                        <li class="html widget_shopping_cart">
+                          <div class="widget_shopping_cart_content">
+
+                      <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                                <li class="woocommerce-mini-cart-item mini_cart_item">
+                              <a href="https://milkybd.com/cart/?remove_item=ad79f871cbbddcfddd878d7ecca0c961&amp;_wpnonce=1eeb24b847" class="remove remove_from_cart_button" aria-label="Remove this item" data-product_id="611" data-cart_item_key="ad79f871cbbddcfddd878d7ecca0c961" data-product_sku="RAISIN0.25KG">×</a>                     <a href="https://milkybd.com/product/raisin/?attribute_weight=250gm">
+                                  <img width="300" height="300" src="https://milkybd.com/wp-content/uploads/2020/10/Golden-Raisin-গোল্ডেন-কিচমিচ-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="https://milkybd.com/wp-content/uploads/2020/10/Golden-Raisin-গোল্ডেন-কিচমিচ-300x300.jpg 300w, https://milkybd.com/wp-content/uploads/2020/10/Golden-Raisin-গোল্ডেন-কিচমিচ-1024x1024.jpg 1024w, https://milkybd.com/wp-content/uploads/2020/10/Golden-Raisin-গোল্ডেন-কিচমিচ-150x150.jpg 150w, https://milkybd.com/wp-content/uploads/2020/10/Golden-Raisin-গোল্ডেন-কিচমিচ-768x768.jpg 768w, https://milkybd.com/wp-content/uploads/2020/10/Golden-Raisin-গোল্ডেন-কিচমিচ-600x600.jpg 600w, https://milkybd.com/wp-content/uploads/2020/10/Golden-Raisin-গোল্ডেন-কিচমিচ-100x100.jpg 100w, https://milkybd.com/wp-content/uploads/2020/10/Golden-Raisin-গোল্ডেন-কিচমিচ.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px">Golden Raisin - 250gm           </a>
+                                                  <span class="quantity">1 × <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>150</bdi></span></span>        </li>
+                                    <li class="woocommerce-mini-cart-item mini_cart_item">
+                              <a href="https://milkybd.com/cart/?remove_item=b44a43017aaf4bc748cf18e8e4ad9116&amp;_wpnonce=1eeb24b847" class="remove remove_from_cart_button" aria-label="Remove this item" data-product_id="625" data-cart_item_key="b44a43017aaf4bc748cf18e8e4ad9116" data-product_sku="KALOJEERA0.20KG">×</a>                      <a href="https://milkybd.com/product/black-seed/?attribute_weight=200gm">
+                                  <img width="300" height="300" src="https://milkybd.com/wp-content/uploads/2020/06/Black-Seeds-কালোজিরা-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="https://milkybd.com/wp-content/uploads/2020/06/Black-Seeds-কালোজিরা-300x300.jpg 300w, https://milkybd.com/wp-content/uploads/2020/06/Black-Seeds-কালোজিরা-150x150.jpg 150w, https://milkybd.com/wp-content/uploads/2020/06/Black-Seeds-কালোজিরা-100x100.jpg 100w, https://milkybd.com/wp-content/uploads/2020/06/Black-Seeds-কালোজিরা.jpg 320w" sizes="(max-width: 300px) 100vw, 300px">Black Seed - 200gm            </a>
+                                                  <span class="quantity">1 × <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>95</bdi></span></span>       </li>
+                              </ul>
+
+                      <p class="woocommerce-mini-cart__total total">
+                        <strong>Subtotal:</strong> <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>245</bdi></span> </p>
+
+                      
+                      <p class="woocommerce-mini-cart__buttons buttons"><a href="https://milkybd.com/cart/" class="button wc-forward">View cart</a><a href="https://milkybd.com/checkout/" class="button checkout wc-forward">Checkout</a></p>
+
+                      
+
+                    </div>
+                        </li>
+                         </ul>
+
+                    </li>
               </ul>
           </div>
           <!-- Mobile Right Elements -->
