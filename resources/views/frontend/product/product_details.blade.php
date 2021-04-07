@@ -144,10 +144,10 @@
 											<label class="screen-reader-text" for="quantity_60518ed75b771">
 												Black Seed quantity
 											</label>
-											<input type="number" id="quantity_60518ed75b771" class="input-text qty text" step="1"min="1" max="" name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="numeric"/>
+											<input type="number" id="quantity" class="input-text qty text" step="1 "min="1" max="" name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="numeric"/>
 											<input type="button" value="+" class="plus button is-form">	
 										</div>
-										<button type="submit" onclick="addCart('{{ $product->id}}','{{$price}}')" class="single_add_to_cart_button button alt">Add to cart</button>
+										<button type="submit" onclick="addCart('{{ $product->id}}','{{$price}}',this)" class="single_add_to_cart_button button alt">Add to cart</button>
 									</div>
 								</div>
 							</div>
