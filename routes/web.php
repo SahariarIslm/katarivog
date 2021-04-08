@@ -599,7 +599,7 @@ Route::post('/carts/remove', 'CartController@remove')->name('cart.remove');
 
 //Checkout Section
 Route::get('/order-processing', 'OrderController@OrderProcessing')->name('cart.order');
-Route::get('/complete-order', 'OrderController@OrderSuccess')->name('order.success');
+Route::get('/complete-order/{id}', 'OrderController@OrderSuccess')->name('order.success');
 Route::post('/complete-order', 'OrderController@OrderSave')->name('order.save');
 
 

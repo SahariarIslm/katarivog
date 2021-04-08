@@ -1,220 +1,212 @@
-@extends('frontend.master')
+@extends('frontend.master') 
 
 @section('content')
-@php
-  use App\ProductAdvance;
-  use App\ShippingCharges;
-@endphp
-  <style type="text/css">
-    table td{
-      padding-left: 0px !important;
-      padding-top: 0px !important;
-      padding-bottom: 10px !important;
-      padding-right: 5px !important;
-    }
-  </style>
-
-  <form action="{{route('order.save')}}" method="post">
-     {{ csrf_field() }}
-    <div class="checkout-box ">
+  <div class="container-width">
+    @include('frontend.components.cart_breadcrumb')
       <div class="row">
-        <div class="col-md-6">
-          <div class="card-body">
-            <h4>SHIPPING ADDRESS</h4>
+        <div id="content" class="large-12 col" role="main">
+          <div class="woocommerce">
+            <div class="woocommerce-notices-wrapper"></div>
 
-            <div class="form-group">
-              <label for="name">Full Name <span class="required">*</span></label>
-              <input class="form-control ng-untouched ng-pristine ng-valid" type="text" name="name" required="1">
-            </div>
+              @include('frontend.components.checkout_login')
 
-            <div class="form-group">
-              <label for="phone">Phone Number <span class="required">*</span></label>
-              <input class="form-control ng-untouched ng-pristine ng-valid" type="text" name="phone" required="1">
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input class="form-control ng-untouched ng-pristine ng-valid" type="email" name="email">
-            </div>
+              <div class="woocommerce-notices-wrapper"></div>
+              <form name="checkout" method="post" class="checkout woocommerce-checkout " action="{{route('order.save')}}" enctype="multipart/form-data">
+                @csrf
+                <div class="row pt-0 ">
+                  <div class="large-7 col">
 
-            <div class="form-group">
-              <label for="shipping_address">Address <span class="required">*</span></label>
-              <input class="form-control ng-untouched ng-pristine ng-valid" type="text" name="shipping_address" required="1">
-            </div>
+                    @include('frontend.components.checkout_social_login')
 
-            <div class="form-group">
-              <button type="submit" class="btn-upper btn btn-primary checkout-page-button checkout-continue ">
-                Submit
-              </button>
-            </div>
+                      <div style="clear:both; margin-bottom: 6px"></div>
+                      <div id="customer_details">
+                        <div class="clear">
+                           <div class="woocommerce-billing-fields">
+                              <h3>Shipping Address</h3>
+                              <div class="woocommerce-billing-fields__field-wrapper">
+                                <p class="form-row form-row-first">
+                                  <label for="first_name">First name
+                                    <abbr class="required">*</abbr>
+                                  </label>
+                                  <span class="woocommerce-input-wrapper">
+                                    <input type="text" class="input-text" name="first_name" id="first_name" required>
+                                  </span>
+                                </p>
+
+                                <p class="form-row form-row-last">
+                                  <label for="last_name">Last name
+                                    <abbr class="required">*</abbr>
+                                  </label>
+                                  <span class="woocommerce-input-wrapper">
+                                    <input type="text" class="input-text" name="last_name" id="last_name" required>
+                                  </span>
+                                </p>
+
+                                <p class="form-row form-row-first">
+                                  <label for="email">Email Address
+                                    <abbr class="required">*</abbr>
+                                  </label>
+                                  <span class="woocommerce-input-wrapper">
+                                    <input type="email" class="input-text" name="email" id="email" required>
+                                  </span>
+                                </p>
+
+                                <p class="form-row form-row-last">
+                                  <label for="phone">Phone
+                                    <abbr class="required">*</abbr>
+                                  </label>
+                                  <span class="woocommerce-input-wrapper">
+                                    <input type="text" class="input-text" name="phone" id="phone" required>
+                                  </span>
+                                </p>
+
+                                <p class="form-row">
+                                  <label for="address">Address
+                                    <abbr class="required">*</abbr>
+                                  </label>
+                                  <span class="woocommerce-input-wrapper">
+                                    <textarea name="shipping_address" required rows="3"></textarea> 
+                                  </span>
+                                </p>
+
+                              </div>
+                           </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="large-5 col">
+                     <div class="is-sticky-column" style="">
+                        <div class="is-sticky-column__inner" style="position: relative; transform: translate3d(0px, 0px, 0px);">
+                          <div class="col-inner ">
+                            <div class="checkout-sidebar sm-touch-scroll">
+                             <h3 id="order_review_heading">Your order</h3>
+                               <div id="order_review" class="woocommerce-checkout-review-order">
+                                  <table class="shop_table woocommerce-checkout-review-order-table" style="position: static; zoom: 1;">
+                                      <thead>
+                                        <tr>
+                                           <th class="product-name">Product</th>
+                                           <th class="product-total">Subtotal</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        @php
+                                          $total = 0;
+                                          foreach(Cart::content() as $carts)
+                                          {
+                                             $name = str_replace(' ', '-', $carts->name);
+                                             if(file_exists($carts->options->image))
+                                             {
+                                                $image = asset('/'.@$carts->options->image);
+                                             }
+                                             else
+                                             {
+                                                $image = asset('/public/frontend/no-image-icon.png');
+                                             }
+                                             $total += $carts->subtotal;
+                                        @endphp
+                                          <tr class="cart_item">
+                                             <td class="product-name">
+                                                {{$carts->name}}&nbsp;            
+                                                <strong class="product-quantity">×&nbsp;{{$carts->qty}}</strong>                     
+                                             </td>
+                                             <td class="product-total">
+                                                <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>{{$carts->subtotal}}</bdi></span>         
+                                             </td>
+                                          </tr>
+                                        @php
+                                          }
+                                       @endphp
+                                      </tbody>
+                                      <tfoot>
+                                        {{-- <tr class="cart-subtotal">
+                                           <th>Subtotal</th>
+                                           <td><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>490</bdi></span></td>
+                                        </tr> --}}
+                                        {{-- <tr class="woocommerce-shipping-totals shipping shipping--boxed">
+                                           <td class="shipping__inner" colspan="2">
+                                              <table class="shipping__table shipping__table--multiple">
+                                                 <tbody>
+                                                    <tr>
+                                                       <th colspan="2">Shipping</th>
+                                                       <td data-title="Shipping">
+                                                          <ul id="shipping_method" class="shipping__list woocommerce-shipping-methods">
+                                                             <li class="shipping__list_item">
+                                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_flat_rate1" value="flat_rate:1" class="shipping_method"><label class="shipping__list_label" for="shipping_method_0_flat_rate1">Inside Dhaka: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>40</bdi></span></label>                
+                                                             </li>
+                                                             <li class="shipping__list_item">
+                                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_flat_rate3" value="flat_rate:3" class="shipping_method"><label class="shipping__list_label" for="shipping_method_0_flat_rate3">Outside Dhaka: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>150</bdi></span></label>                
+                                                             </li>
+                                                             <li class="shipping__list_item">
+                                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_wbs106c98f512_outside_dhaka_city_wbs" value="wbs:10:6c98f512_outside_dhaka_city_wbs" class="shipping_method" checked="checked"><label class="shipping__list_label" for="shipping_method_0_wbs106c98f512_outside_dhaka_city_wbs">Outside Dhaka City WBS: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>160</bdi></span></label>                
+                                                             </li>
+                                                             <li class="shipping__list_item">
+                                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_wbs10ab371c5c_gazipur_savar_tongi_narayanganj_wbs" value="wbs:10:ab371c5c_gazipur_savar_tongi_narayanganj_wbs" class="shipping_method"><label class="shipping__list_label" for="shipping_method_0_wbs10ab371c5c_gazipur_savar_tongi_narayanganj_wbs">Gazipur, Savar, Tongi, Narayanganj WBS: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>90</bdi></span></label>                
+                                                             </li>
+                                                          </ul>
+                                                       </td>
+                                                    </tr>
+                                                 </tbody>
+                                              </table>
+                                           </td>
+                                        </tr>
+                                        <tr class="fee">
+                                           <th>10% Discount</th>
+                                           <td><span class="woocommerce-Price-amount amount"><bdi>-<span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>49</bdi></span></td>
+                                        </tr> --}}
+                                        <tr class="order-total">
+                                           <th>Total</th>
+                                           <td>
+                                              <strong>
+                                                <span class="woocommerce-Price-amount amount">
+                                                  <bdi>
+                                                    <span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>{{$total}}
+                                                  </bdi>
+                                                </span>
+                                              </strong> 
+                                              <input type="hidden" name="total_amount" value="{{$total}}">
+                                            </td>
+                                        </tr>
+                                     </tfoot>
+                                  </table>
+                                  <div id="payment" class="woocommerce-checkout-payment">
+                                     <ul class="wc_payment_methods payment_methods methods">
+                                        <li class="wc_payment_method payment_method_cod">
+                                          <input id="payment_method_cod" type="radio" class="input-radio" name="payment_method" value="cod" required>
+                                          <label for="payment_method_cod">
+                                            Cash on delivery  
+                                          </label>
+                                          <div class="payment_box payment_method_cod" style="margin-left: 32px;">
+                                            <p>Pay with cash upon delivery.</p>
+                                          </div>
+                                        </li>
+
+                                        <li class="wc_payment_method payment_method_bkash">
+                                          <input id="payment_method_bkash" type="radio" class="input-radio" name="payment_method" value="bkash">
+                                          <label for="payment_method_bkash">
+                                            Bkash(Write your bkash transaction id)
+                                          </label>
+                                          <div class="payment_box payment_method_bkash" style="margin-left: 32px;">
+                                            <input type="text" name="bkash_transation_no" placeholder="write your bkash transaction id">
+                                          </div>
+                                        </li>
+                                     </ul>
+                                     <div class="form-row place-order">
+                                        <button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order">
+                                          Place order
+                                        </button>
+                                     </div>
+                                  </div>
+                               </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                </div>
+             </form>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="panel-group checkout-steps" id="accordion">
-            <div class="panel panel-default checkout-step-01">
-              <div class="panel-heading">
-                <h4 class="unicase-checkout-title">
-                  <a data-toggle="collapse" class="" data-parent="#accordion" href="#collapseOne">
-                    <span>1</span>Payment Method
-                  </a>
-                </h4>
-              </div>
-              <div {{-- id="collapseOne" class="panel-collapse collapse in" --}}>
-                <div class="panel-body">
-                  <div class="row">         
-                    <div class="col-md-12 col-sm-12 guest-login">
-                      <p class="text title-tag-line">Select Your Payment Method</p>
-                        <div class="radio radio-checkout-unicase" style="margin-left: 20px;">  
-                          <input id="cash_on_delivery" type="radio" name="payment_method" value="cod" checked required="">  
-                          <label class="radio-button guest-check" for="cash_on_delivery" style="padding-left: 7px;padding-bottom: 10px">
-                            Cash On Delivery
-                          </label>  
-                          <br>
-                          <input id="online_pyment" type="radio" name="payment_method" value="online_pyment">  
-                          <label class="radio-button" for="online_pyment" style="padding-left: 7px">
-                            Online Payment
-                          </label>  
-                        </div>  
-                    </div>
-                  </div>      
-                </div>
-              </div>
-            </div>
-
-            <div class="panel panel-default checkout-step-02">
-              <div class="panel-heading">
-                <h4 class="unicase-checkout-title">
-                  <a data-toggle="collapse" class="" data-parent="#accordion" href="#collapseTwo">
-                    <span>2</span>Shopping Cart Summary
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse in">
-                <div class="panel-body">
-                  <div class="row">         
-                    <div class="col-md-12 col-sm-12 guest-login">
-                      
-                      <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="cart-description item">Image</th>
-                                    <th class="cart-product-name item" style="text-align: left;">Name</th>
-                                    <th class="cart-sub-total item text-center">Code</th>
-                                    <th class="cart-qty item text-center">Qty</th>
-                                    <th class="cart-total last-item text-center">Amount</th>
-                                </tr>
-                            </thead>
-                            
-                            <tbody>
-                              @php
-                                $total = 0;
-                                foreach(Cart::content() as $carts) {
-                                  $name = str_replace(' ', '-', $carts->name);
-                                  if(file_exists($carts->options->image)){
-                                      $image = asset('/'.@$carts->options->image);
-                                  }
-                                  else{
-                                      $image = $noImage;
-                                  }
-                              @endphp
-                                <tr>
-                                  <td width="80px">
-                                    <a href="{{route('product.details',['id'=>@$carts->id,'name'=>@$name])}}">
-                                      <img src="{{ $image }}" style="height: 60px;">
-                                    </a>
-                                  </td>
-
-                                  <td>
-                                    <a href="{{route('product.details',['id'=>@$carts->id,'name'=>@$name])}}" title="{{$carts->name}}">
-                                      {{str_limit($carts->name,20)}}
-                                    </a>
-                                  </td>
-
-                                  <td class="text-center">{{$carts->options->deal_code}}</td>
-                                  <td class="text-center">{{$carts->qty}}</td>
-                                  <td class="text-center">{{$carts->subtotal}}</td>
-                                </tr>
-                                @php
-                                  $total += $carts->subtotal;
-                                  $free_shipping = ProductAdvance::where('free_shipping','free')->where('productId',$carts->id)->first();
-                                @endphp
-                              @php 
-                                }
-
-                                  $total = str_replace(',', '', $total);
-                                  $shipping_charges = ShippingCharges::where('shippingStatus',1)->get();
-                                  foreach($shipping_charges as $k ){ 
-                                      $diff[abs($k->shippingAmount - $total)] = $k;
-                                       }
-
-                                  if (@$k && $total) {
-                                      ksort($diff, SORT_NUMERIC);
-                                      $charge = current($diff);
-                                      if ($free_shipping) {
-                                          
-                                          $shippingCharge = 0;
-                                      }else{
-                                          $shippingCharge = $charge->shippingCharge;
-                                      }
-                                      
-                                  }else{
-                                      $shippingCharge = 0; 
-                                  } 
-
-                                  $grandTotal = $total + $shippingCharge;
-                              @endphp
-
-                            </tbody>
-                        </table>
-
-                        <table style="margin-top: -80px">
-                            <tr>
-                              <td colspan="3">
-                                  <div class="shopping-cart-btn">
-                                      <span class="">
-                                          <a href="{{ route('cart.index') }}" class="btn btn-upper btn-primary outer-left-xs">Edit Shopping Cart
-                                          </a>
-                                      </span>
-                                  </div>
-                              </td>
-
-                              <td width="1000px">
-                                <table class="table" style="width: 250px;float: right;margin-top: 70px;">
-                                  <thead>
-                                      <tr>
-                                        <th>Subtotal</th>
-                                        <th style="text-align: right;">{{Cart::subtotal()}}</th>
-                                      </tr>
-                                      <tr>
-                                        <th>Shipping Charge</th>
-                                        <th style="text-align: right;">৳ {{number_format($shippingCharge, 2, '.', '')}}</th>
-                                      </tr>
-
-                                      <tr>
-                                        <th>Grand Total</th>
-                                        <th style="text-align: right;">৳ {{number_format($grandTotal, 2, '.', '')}}</th>
-                                      </tr>
-                                  </thead>
-                              </table>
-                              </td>
-                          </tr>
-                        </table>
-                    </div>
-                    </div>
-                  </div>      
-                </div>
-              </div>
-            </div>
-
-          </div>  
-        </div>
       </div>
-    </div>
-
-    <input type="hidden" name="shipping_charge" value="{{$shippingCharge}}">
-    <input type="hidden" name="total_amount" value="{{$grandTotal}}">
-  </form>
+  </div>
 @endsection
-
-
