@@ -39,8 +39,9 @@ class ProductController extends Controller
       'meta_title' =>$product->metaTitle,
       'meta_description' =>$product->metaDescription
     ];
+    $category_list = Category::where('categoryStatus',1)->orderBy('orderBy','ASC')->get();
 
     $title = $product->name;
-    return view('frontend.product.product_details')->with(compact('metaTag','title','product','product_images','reviews','relatedProductList','hotProductList'));
+    return view('frontend.product.product_details')->with(compact('metaTag','title','product','product_images','reviews','relatedProductList','hotProductList','category_list'));
   }
 }

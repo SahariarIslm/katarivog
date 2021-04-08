@@ -5,7 +5,6 @@
     if(count(@$getProductList) > 0){
 @endphp
   <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
-
     <div class="more-info-tab clearfix ">
       <h3 class="new-product-title pull-left">{{$topProductSection->name}}</h3>
       <ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
@@ -23,9 +22,7 @@
          @endif 
       </ul> 
     </div>
-
     <div class="tab-content outer-top-xs">
-
       {{-- all product show --}}
       <div class="tab-pane in active" id="all">
         <div class="product-slider">
@@ -88,7 +85,6 @@
                         </div>
                       @endif
                     </div>
-
                     <div class="cart clearfix animate-effect">
                       <div class="action">
                         <ul class="list-unstyled">
@@ -112,21 +108,14 @@
                            </li>
                         </ul>
                       </div>
-                      <!-- /.action --> 
                     </div>
-                    <!-- /.cart --> 
                   </div>
-                  <!-- /.product --> 
-
                 </div>
-                <!-- /.products --> 
               </div>
             @endforeach
           </div>
         </div>
       </div>
-
-      {{-- category wise product --}}
       @php
         foreach ($getCategoryBySection as $category) {
           $categoryTabLink = $category->categoryName."_".$topProductSection->id."_".$category->id;

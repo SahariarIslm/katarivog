@@ -62,9 +62,12 @@
       <!-- Logo -->
           <div id="logo" class="flex-col logo">
           <!-- Header logo -->
-              <a href="index.html" title="Milky - | Live Well |" rel="home">
-                  <img width="142" height="75" src="{{ asset('/') }}/public/frontend/assets/wp-content/uploads/2020/10/rsz_milky_new_logo-01.png" class="header_logo header-logo" alt="Milky"/>
-                  <img  width="142" height="75" src="{{ asset('/') }}/public/frontend/assets/wp-content/uploads/2020/10/rsz_milky_new_logo-01.png" class="header-logo-dark" alt="Milky"/>
+              <a href="{{route('home.index')}}" title="Katarivog - | Live Well |" rel="home">
+                @if(file_exists(@$information->siteLogo))
+                  <img width="142" height="75" src="{{asset($information->siteLogo)}}" alt="Katarivog"/>
+                @else
+                  <img width="142" height="75" src="{{asset($information->siteLogo)}}" alt="Katarivog"/>
+                @endif
               </a>
           </div>
           <!-- Mobile Left Elements -->
@@ -98,26 +101,18 @@
                       </a>
                   </li>
                   <li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-248 has-dropdown">
-                      <a href="shop/index.html" class="nav-top-link">
+
+                      <a href="{{route('shop')}}" class="nav-top-link">
                           Shop
-                          <i class="icon-angle-down" ></i>
+                          <i class="fa fa-chevron-down" style="font-size: 10px" aria-hidden="true"></i>
                       </a>
+
                       <ul class="sub-menu nav-dropdown nav-dropdown-default">
-                          <li id="menu-item-342" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-342"><a href="product-category/dairy/index.html">Dairy</a></li>
-                          <li id="menu-item-346" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-346"><a href="product-category/herbal/index.html">Herbal &amp; Grain</a></li>
-                          <li id="menu-item-347" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-347"><a href="product-category/homemade-pickle/index.html">Pickle &amp; Sauce</a></li>
-                          <li id="menu-item-344" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-344"><a href="product-category/oil-edible-hair-skin/index.html">Oil &#8211; Edible, Hair &amp; Skin</a></li>
-                          <li id="menu-item-345" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-345"><a href="product-category/pitha-payesh-ingredients-seasonal-items/index.html">Pitha Payesh Ingredients &amp; Seasonal Items</a></li>
-                          <li id="menu-item-348" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-348"><a href="product-category/honey/index.html">Honey</a></li>
-                          <li id="menu-item-349" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-349"><a href="product-category/nuts-fruits/index.html">Nuts &amp; Fruits</a></li>
-                          <li id="menu-item-350" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-350"><a href="product-category/meat-fish-dried-fish/index.html">Meat, Fish &amp; Dried Fish</a></li>
-                          <li id="menu-item-1330" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1330"><a href="product-category/grocery/index.html">Grocery</a></li>
-                          <li id="menu-item-353" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-353 nav-dropdown-col"><a href="product-category/spices/index.html">Spices</a>
-                              <ul class="sub-menu nav-column nav-dropdown-default">
-                                  <li id="menu-item-355" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-355"><a href="product-category/spices/powder-spices/index.html">Powdered Spices</a></li>
-                                  <li id="menu-item-354" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-354"><a href="product-category/spices/whole-spices/index.html">Special Mixed Spices</a></li>
-                              </ul>
+                        @foreach($category_list as $category)
+                          <li id="menu-item-342" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-342">
+                            <a href="{{ route('category.product',['id'=>$category->id,'name'=>str_replace(' ', '-', $category->categoryName)]) }}">{{$category->categoryName}}</a>
                           </li>
+                        @endforeach
                       </ul>
                   </li>
                   <li id="menu-item-264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-264">
@@ -134,7 +129,7 @@
                       <div class="header-button">     
                           <a href="#search-lightbox" aria-label="Search" data-open="#search-lightbox" data-focus="input.search-field"
                           class="icon primary button round is-small">
-                              <i class="icon-search" style="font-size:16px;"></i>
+                          <i class="fa fa-search" style="font-size:16px;"></i>
                           </a>
                       </div>
                           
@@ -182,7 +177,7 @@
                               <span> Logout </span>
                           </a>
                         @else
-                          <a href="my-account/index.html" class="nav-top-link nav-top-not-logged-in icon button circle is-outline is-small" data-open="#login-form-popup">
+                          <a href="#" class="nav-top-link nav-top-not-logged-in icon button circle is-outline is-small" data-open="#login-form-popup">
                               <span> Login </span>
                           </a>
                         @endif   
@@ -231,10 +226,6 @@
       </div>
   </div>   
 </div>
-
-
-
-
 <div id="login-form-popup" class="lightbox-content mfp-hide">
     <div class="the_champ_outer_login_container">
       <div class="the_champ_social_login_title">Login with your Social ID</div>
@@ -311,7 +302,7 @@
               </p>
               <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="reg_password">Password&nbsp;<span class="required">*</span></label>
-                <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
+                <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password"/>
               </p>
               <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="reg_confirmPassword">Confirm Password&nbsp;<span class="required">*</span></label>

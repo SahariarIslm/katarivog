@@ -4,9 +4,11 @@
         </script>{{-- 
         <script type="text/javascript">
             var theChampDefaultLang = 'en_US', theChampCloseIconPath = 'wp-content/plugins/super-socializer/images/close.png';
+        </script>
+        <script> var theChampSiteUrl = 'index.html', theChampVerified = 0, theChampEmailPopup = 0; </script>
         </script> --}}
-        <script> var theChampSiteUrl = 'index.html', theChampVerified = 0, theChampEmailPopup = 0; </script>{{-- 
-        <script> 
+        <script src="https://use.fontawesome.com/25f1d27650.js"></script>
+        {{-- <script> 
             var theChampLoadingImgPath = '{{ asset('/') }}/public/frontend/assets/wp-content/plugins/super-socializer/images/ajax_loader.gif'; var theChampAjaxUrl = 'wp-admin/admin-ajax.html'; var theChampRedirectionUrl = 'index.html'; var theChampRegRedirectionUrl = 'index.html'; 
         </script> --}}
         <script> var theChampFBKey = '276461523453842', theChampSameTabLogin = '0', theChampVerified = 0; var theChampAjaxUrl = 'wp-admin/admin-ajax.html'; var theChampPopupTitle = ''; var theChampEmailPopup = 0; var theChampEmailAjaxUrl = 'wp-admin/admin-ajax.html'; var theChampEmailPopupTitle = ''; var theChampEmailPopupErrorMsg = ''; var theChampEmailPopupUniqueId = ''; var theChampEmailPopupVerifyMessage = ''; var theChampSteamAuthUrl = ""; var theChampTwitterRedirect = 'https%3A%2F%2Fmilkybd.com%2F';  var heateorMSEnabled = 0; var theChampTwitterAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Twitter&super_socializer_redirect_to=" + theChampTwitterRedirect; var theChampLineAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Line&super_socializer_redirect_to=" + theChampTwitterRedirect; var theChampLiveAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Live&super_socializer_redirect_to=" + theChampTwitterRedirect; var theChampFacebookAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Facebook&super_socializer_redirect_to=" + theChampTwitterRedirect; var theChampGoogleAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Google&super_socializer_redirect_to=" + theChampTwitterRedirect; var theChampVkontakteAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Vkontakte&super_socializer_redirect_to=" + theChampTwitterRedirect; var theChampLinkedinAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Linkedin&super_socializer_redirect_to=" + theChampTwitterRedirect; var theChampInstagramAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Instagram&super_socializer_redirect_to=" + theChampTwitterRedirect;

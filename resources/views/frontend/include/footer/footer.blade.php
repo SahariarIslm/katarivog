@@ -8,22 +8,30 @@
             <div class="is-divider small">
             </div>
             <ul>
-                @foreach ($footer_menu_list as $key=>$footer_menu)
-                @if($key <= 3)
-                    @php
-                        $link = route('page.content',['menuName'=>str_replace(' ', '-', $footer_menu->menuName),'menuId'=>$footer_menu->id]);
-                    @endphp 
-                    <li class="page_item page-item-12 current_page_item">
-                        <a href="{{$link}}" aria-current="page">
-                            {{$footer_menu->menuName}}
-                        </a>
-                    </li>
-                @endif
-                @endforeach
+                <li class="page_item page-item-12 current_page_item">
+                    <a href="{{route('home.index')}}" aria-current="page">
+                        Home
+                    </a>
+                </li>
+                <li class="page_item page-item-12 current_page_item">
+                    <a href="{{route('home.index')}}" aria-current="page">
+                        About Us
+                    </a>
+                </li>
+                <li class="page_item page-item-12 current_page_item">
+                    <a href="{{route('home.index')}}" aria-current="page">
+                        Privacy Policy
+                    </a>
+                </li>
+                <li class="page_item page-item-12 current_page_item">
+                    <a href="{{route('home.index')}}" aria-current="page">
+                        Terms & Conditions
+                    </a>
+                </li>
             </ul>
         </div>
         <div id="recent-posts-4" class="col pb-0 widget widget_recent_entries">
-            <span class="widget-title">Useful Links</span>
+            <span class="widget-title">NUTRITION GUIDE</span>
             <div class="is-divider small">
             </div>
             <ul>
@@ -85,16 +93,16 @@
         </div>
         <div class="footer-primary pull-left">
             <div class="copyright-footer">
-                Copyright © 2020 
-                <a href="index.html">MILKY</a>
+                Copyright © {{Date('Y')}}
+                <a href="index.html">Katarivog</a>
                     |   Developed by 
-                <a href="https://www.facebook.com/kibstechsolution/">
-                    kibs-tech
+                <a target="_blank" href="https://www.facebook.com/OfficialMr.Editor">
+                    Mr. Editor - The Production House
                 </a>      
             </div>
         </div>
     </div>
 </div>
 <a href="#top" class="back-to-top button icon invert plain fixed bottom z-1 is-outline circle" id="top-link">
-    <i class="icon-angle-up"></i>
+    <i class="fa fa-angle-up" style="font-size: 16px;" aria-hidden="true"></i>
 </a>
