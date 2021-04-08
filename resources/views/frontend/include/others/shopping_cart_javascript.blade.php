@@ -1,9 +1,5 @@
 <script>
 
-  window.onload = function(e){ 
-    CartView()
-  }
-
 var fadeTime = 0;
 
 //add cart

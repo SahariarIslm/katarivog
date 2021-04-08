@@ -237,7 +237,7 @@
                         </tbody>
                      </table>
                      <div class="wc-proceed-to-checkout">
-                        <a href="https://milkybd.com/checkout/" class="checkout-button button alt wc-forward">
+                        <a href="{{route('cart.order')}}" class="checkout-button button alt wc-forward">
                         Proceed to checkout</a>
                      </div>
                   </div>{{-- 

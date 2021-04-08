@@ -189,7 +189,9 @@
                       </div>
                   </li>
                   <li class="header-divider"></li>
-                  <li class="cart-item has-icon has-dropdown" id="mini_cart"></li>
+                  <li class="cart-item has-icon has-dropdown" id="mini_cart">
+                    @include('frontend.components.mini_cart')
+                  </li>
               </ul>
           </div>
           <!-- Mobile Right Elements -->

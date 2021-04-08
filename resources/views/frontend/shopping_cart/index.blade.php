@@ -6,6 +6,7 @@
             <div class="row">
                <div id="content" class="large-12 col" role="main">
                     <div class="woocommerce" id="main_cart">
+                    	@include('frontend.components.main_cart')
                     </div>
                </div>
             </div>
