@@ -133,4 +133,9 @@ class GetData
                   ->get();
       return $sub_menuList;
     }
+
+    public static function CartTotal(){
+      $total = \Cart::subtotal();
+      return $total;
+    }
 }

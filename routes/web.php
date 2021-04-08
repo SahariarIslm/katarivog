@@ -589,21 +589,17 @@ Route::get('/category/{id}/{name}', 'CategoryController@ProductByCategory')->nam
 Route::post('/get-category-product', 'CategoryController@GetCategoryProduct')->name('getCategoryProduct');
 
 //Cart Section
+Route::get('/cart/cart-viwe', 'CartController@cartView')->name('cart.cart_view');
 Route::get('/shopping-cart', 'CartController@index')->name('cart.index');
 Route::post('/cart/addItem', 'CartController@addCart')->name('cart.addItem');
-Route::get('/cart/item-count', 'CartController@cartItemCount')->name('cart.itemcount');
 Route::post('/carts/update', 'CartController@update')->name('carts.update');
 Route::post('/carts/remove', 'CartController@remove')->name('cart.remove');
-
-Route::get('/cart/minicartProduct', 'CartController@minicartProduct')->name('cart.minicartProduct');
-Route::get('/cart/mainCartProduct', 'CartController@MainCartProduct')->name('cart.MainCartProduct');
-
 //End Cart Section
 
 
 //Checkout Section
 Route::get('/order-processing', 'OrderController@OrderProcessing')->name('cart.order');
-Route::get('/complete-order', 'OrderController@OrderSuccess')->name('order.success');
+Route::get('/complete-order/{id}', 'OrderController@OrderSuccess')->name('order.success');
 Route::post('/complete-order', 'OrderController@OrderSave')->name('order.save');
 
 

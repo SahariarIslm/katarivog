@@ -184,32 +184,8 @@
                       </div>
                   </li>
                   <li class="header-divider"></li>
-                  <li class="cart-item has-icon has-dropdown">
-                      <a href="cart/index.html" title="Cart" class="header-cart-link is-small">
-                          <span class="header-cart-title">
-                             Cart   /      
-                              <span class="cart-price">
-                                  <span class="woocommerce-Price-amount amount">
-                                      <bdi>
-                                          <span class="woocommerce-Price-currencySymbol">&#2547;&nbsp;</span>
-                                          0
-                                      </bdi>
-                                  </span>
-                              </span>
-                          </span>
-                          <span class="cart-icon image-icon">
-                              <strong>0</strong>
-                          </span>
-                      </a>
-                      <ul class="nav-dropdown nav-dropdown-default">
-                          <li class="html widget_shopping_cart">
-                              <div class="widget_shopping_cart_content">
-                                  <p class="woocommerce-mini-cart__empty-message">
-                                      No products in the cart.
-                                  </p>
-                              </div>
-                          </li>
-                      </ul>
+                  <li class="cart-item has-icon has-dropdown" id="mini_cart">
+                    @include('frontend.components.mini_cart')
                   </li>
               </ul>
           </div>

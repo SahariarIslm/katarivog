@@ -6,6 +6,7 @@
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="pingback" href="xmlrpc.php" />
         <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <META NAME="KEYWORDS" CONTENT="<?php echo @$metaTag['meta_keyword']; ?>">
 		<META property="og:title" NAME="TITLE" CONTENT="<?php echo @$metaTag['meta_title']; ?>">
 		<META property="og:description" NAME="DESCRIPTION" CONTENT="<?php echo @$metaTag['meta_description']; ?>">
