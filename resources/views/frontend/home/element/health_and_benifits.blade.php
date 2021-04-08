@@ -10,7 +10,7 @@
                 <b></b>
                 <span class="section-title-main" style="font-size:115%;color:rgb(0, 0, 0);">Health benefits</span>
                 <b></b>
-                <a href="nutrition-guide/index.html" target="">Nutrition Guide<i class="icon-angle-right" ></i></a>
+                <a href="#" target="">Nutrition Guide<i class="fa fa-angle-right" style="font-size: 16px;" aria-hidden="true"></i></a>
             </h3>
         </div>
         <div class="row large-columns-3 medium-columns-1 small-columns-1 row-small row-full-width slider row-slider slider-nav-reveal slider-nav-push"  data-flickity-options='{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}'>

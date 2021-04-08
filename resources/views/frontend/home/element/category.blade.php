@@ -5,7 +5,7 @@
         <b></b>
         <a href="{{route('shop')}}">
             Buy Now
-            <i class="icon-angle-right" ></i>
+            <i class="fa fa-angle-right" style="font-size: 16px;" aria-hidden="true"></i>
         </a>
     </h3>
 </div>

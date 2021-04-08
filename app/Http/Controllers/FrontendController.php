@@ -35,7 +35,8 @@ class FrontendController extends Controller
       'meta_description' =>$metaInfo->metaDescription
     ];
 
-    $firstBannerList = Slider::where('status',1)->orderBy('orderBy','DESC')->limit(1)->get();
+    $firstBannerList = Slider::where('status',1)->where('orderBy',1)->get();
+    $secondBanner = Slider::where('status',1)->where('orderBy',2)->get();
 
     $policy_list = Policy::where('policiesStatus','1')->orderBy('orderBy','ASC')->get();
 
@@ -80,7 +81,7 @@ class FrontendController extends Controller
 
     $category_list = Category::where('categoryStatus',1)->orderBy('orderBy','ASC')->get();
 
-    return view('frontend.home.home')->with(compact('setReview','title','metaTag','policy_list','firstBannerList','secondBannerList','topProductSectionList','middleProductSectionList','blogHeader','blogList','bottomProductSectionList','sidebarProductSectionList','hotProductList','specialProductList','category_list'));
+    return view('frontend.home.home')->with(compact('setReview','title','metaTag','policy_list','firstBannerList','secondBanner','secondBannerList','topProductSectionList','middleProductSectionList','blogHeader','blogList','bottomProductSectionList','sidebarProductSectionList','hotProductList','specialProductList','category_list'));
   }
 
   public function searchProduct(Request $request){

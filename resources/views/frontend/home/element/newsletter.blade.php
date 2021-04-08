@@ -1,10 +1,10 @@
 <div class="container section-title-container" style="margin-top:0px;margin-bottom:0px;">
     <h3 class="section-title section-title-center"><b></b>
         <span class="section-title-main" style="font-size:115%;color:rgb(0, 0, 0);">
-            be a member
+            Be a Member
         </span>
         <b></b>
-        <a href="my-account/index.html" target="">Sign Up<i class="icon-angle-right" ></i></a>
+        <a href="#" data-open="#login-form-popup" target="">Sign Up<i class="fa fa-angle-right" style="font-size: 16px;" aria-hidden="true"></i></a>
     </h3>
 </div>
 <div class="banner has-hover" id="banner-1215606694">
@@ -29,7 +29,7 @@
                             <strong>Sign up today</strong>
                         </h3>
                         <p>
-                            <span style="color: #ffffff;"><strong>Milky</strong></span> 
+                            <span style="color: #ffffff;"><strong>Katarivog</strong></span> 
                             will keep offering discounts and gifts for their valuable customers. Please Sign up, be a part of the family.
                         </p>
                         <div role="form" class="wpcf7" id="wpcf7-f269-p12-o1" lang="en-US" dir="ltr">

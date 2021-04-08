@@ -4,7 +4,7 @@
                 <b></b>
                 <span class="section-title-main" style="font-size:115%;color:rgb(0, 0, 0);">Our services</span>
                 <b></b>
-                <a href="shop/index.html" target="">Live Well<i class="icon-angle-right" ></i>
+                <a href="{{route('shop')}}" target="">Live Well<i class="fa fa-angle-right" style="font-size: 16px;" aria-hidden="true"></i>
                 </a>
             </h3>
         </div>

@@ -9,7 +9,7 @@
         <b></b>
         <span class="section-title-main" style="font-size:115%;color:rgb(0, 0, 0);">{{$topProductSection->name}}</span>
         <b></b>
-        <a href="shop/index.html" target="">Shop Now<i class="icon-angle-right" ></i></a>
+        <a href="{{route('shop')}}" target="">Shop Now<i class="fa fa-angle-right" style="font-size: 16px;" aria-hidden="true"></i></a>
     </h3>
 </div>
 <div class="woocommerce columns-6 ">

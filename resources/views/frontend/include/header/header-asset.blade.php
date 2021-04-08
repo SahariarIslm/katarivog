@@ -4,6 +4,7 @@
         <script type="text/javascript">
             var theChampDefaultLang = 'en_US', theChampCloseIconPath = 'wp-content/plugins/super-socializer/images/close.png';
         </script>
+        <script src="https://use.fontawesome.com/25f1d27650.js"></script>
         <script> var theChampSiteUrl = 'index.html', theChampVerified = 0, theChampEmailPopup = 0; </script>
         <script> 
             var theChampLoadingImgPath = '{{ asset('/') }}/public/frontend/assets/wp-content/plugins/super-socializer/images/ajax_loader.gif'; var theChampAjaxUrl = 'wp-admin/admin-ajax.html'; var theChampRedirectionUrl = 'index.html'; var theChampRegRedirectionUrl = 'index.html'; 
