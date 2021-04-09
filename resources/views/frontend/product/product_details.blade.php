@@ -98,7 +98,7 @@
 							                "pageDots": false,
 							                "rightToLeft": false       }'>
 	    							<div data-thumb="{{asset($getImage->images)}}" class="woocommerce-product-gallery__image slide first">
-	    								<a href="{{asset($getImage->images)}}">
+	    								<a href="{{asset($getImage->images)}}" data-fancybox="gallery">
 	    									@if(file_exists(@$getImage->images))
 	    									<img width="320" height="320" src="{{asset($getImage->images)}}" class="{{asset($getImage->images)}} 1200w" alt=""/>
 	    									@else
@@ -167,7 +167,7 @@
 					</div>
 					<style scope="scope"></style>
 				</div>
-				<div class="product-page-sections">
+				{{-- <div class="product-page-sections">
 					<div class="product-section">
 						<div class="row">
 							<div class="large-4 col pb-0 mb-0">
@@ -202,7 +202,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				
 			</div>
 		</div>
