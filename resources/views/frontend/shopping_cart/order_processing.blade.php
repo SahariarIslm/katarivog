@@ -8,7 +8,7 @@
           <div class="woocommerce">
             <div class="woocommerce-notices-wrapper"></div>
 
-              @include('frontend.components.checkout_login')
+              {{-- @include('frontend.components.checkout_login') --}}
 
               <div class="woocommerce-notices-wrapper"></div>
               <form name="checkout" method="post" class="checkout woocommerce-checkout " action="{{route('order.save')}}" enctype="multipart/form-data">
@@ -16,9 +16,8 @@
                 <div class="row pt-0 ">
                   <div class="large-7 col">
 
-                    @include('frontend.components.checkout_social_login')
+                    {{-- @include('frontend.components.checkout_social_login') --}}
 
-                      <div style="clear:both; margin-bottom: 6px"></div>
                       <div id="customer_details">
                         <div class="clear">
                            <div class="woocommerce-billing-fields">
@@ -118,48 +117,15 @@
                                        @endphp
                                       </tbody>
                                       <tfoot>
-                                        {{-- <tr class="cart-subtotal">
-                                           <th>Subtotal</th>
-                                           <td><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>490</bdi></span></td>
-                                        </tr> --}}
-                                        {{-- <tr class="woocommerce-shipping-totals shipping shipping--boxed">
-                                           <td class="shipping__inner" colspan="2">
-                                              <table class="shipping__table shipping__table--multiple">
-                                                 <tbody>
-                                                    <tr>
-                                                       <th colspan="2">Shipping</th>
-                                                       <td data-title="Shipping">
-                                                          <ul id="shipping_method" class="shipping__list woocommerce-shipping-methods">
-                                                             <li class="shipping__list_item">
-                                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_flat_rate1" value="flat_rate:1" class="shipping_method"><label class="shipping__list_label" for="shipping_method_0_flat_rate1">Inside Dhaka: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>40</bdi></span></label>                
-                                                             </li>
-                                                             <li class="shipping__list_item">
-                                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_flat_rate3" value="flat_rate:3" class="shipping_method"><label class="shipping__list_label" for="shipping_method_0_flat_rate3">Outside Dhaka: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>150</bdi></span></label>                
-                                                             </li>
-                                                             <li class="shipping__list_item">
-                                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_wbs106c98f512_outside_dhaka_city_wbs" value="wbs:10:6c98f512_outside_dhaka_city_wbs" class="shipping_method" checked="checked"><label class="shipping__list_label" for="shipping_method_0_wbs106c98f512_outside_dhaka_city_wbs">Outside Dhaka City WBS: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>160</bdi></span></label>                
-                                                             </li>
-                                                             <li class="shipping__list_item">
-                                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_wbs10ab371c5c_gazipur_savar_tongi_narayanganj_wbs" value="wbs:10:ab371c5c_gazipur_savar_tongi_narayanganj_wbs" class="shipping_method"><label class="shipping__list_label" for="shipping_method_0_wbs10ab371c5c_gazipur_savar_tongi_narayanganj_wbs">Gazipur, Savar, Tongi, Narayanganj WBS: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>90</bdi></span></label>                
-                                                             </li>
-                                                          </ul>
-                                                       </td>
-                                                    </tr>
-                                                 </tbody>
-                                              </table>
-                                           </td>
-                                        </tr>
-                                        <tr class="fee">
-                                           <th>10% Discount</th>
-                                           <td><span class="woocommerce-Price-amount amount"><bdi>-<span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>49</bdi></span></td>
-                                        </tr> --}}
+
+                                      @include('frontend.components.shipping_charge')                                
                                         <tr class="order-total">
                                            <th>Total</th>
                                            <td>
                                               <strong>
                                                 <span class="woocommerce-Price-amount amount">
                                                   <bdi>
-                                                    <span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>{{$total}}
+                                                    <span class="woocommerce-Price-currencySymbol">৳&nbsp;</span> <span id="total_amount">{{$total}}</span>
                                                   </bdi>
                                                 </span>
                                               </strong> 

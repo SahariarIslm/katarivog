@@ -1,4 +1,5 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script type="text/javascript">
         (function () {
@@ -139,3 +140,15 @@
     </script>{{-- 
     <script type='text/javascript' src='{{ asset('/') }}/public/frontend/assets/wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min89df.js?ver=4.6.0' id='wc-password-strength-meter-js'>
     </script> --}}
+
+    <script type="text/javascript">
+        $('[data-fancybox="gallery"]').fancybox({
+          buttons : [
+            'download',
+            'zoom',
+            'slideShow',
+            'thumbs',
+            'close'
+          ]
+        });
+    </script>

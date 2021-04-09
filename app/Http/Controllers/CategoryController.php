@@ -20,7 +20,7 @@ class CategoryController extends Controller
                   ->where('products.category_id',$id)
                   ->where('status',1)
                   ->orderBy('orderBy','ASC')
-                  ->get();
+                  ->paginate(20);
       // dd($getProductList);
     $category_list = Category::where('categoryStatus',1)->orderBy('orderBy','ASC')->get();
      $metaTag =[

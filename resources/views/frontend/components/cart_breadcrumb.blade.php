@@ -13,12 +13,6 @@
                 <a  href="{{route('cart.order')}}" class="hide-for-small {{\Route::currentRouteName() == 'cart.order' ?'current':''}}">
                   <span class="breadcrumb-step hide-for-small">2</span>Checkout details       
                 </a>
-               <span class="divider hide-for-small">
-                  <i class="icon-angle-right"></i>
-                </span>
-                <a class="no-click hide-for-small">
-                  <span class="breadcrumb-step hide-for-small">3</span>Order Complete
-                </a>
               </nav>
             </div>
           </div>

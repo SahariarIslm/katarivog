@@ -17,3 +17,4 @@
       </ul>
    </div>
 </div>
+<div style="clear:both; margin-bottom: 6px"></div>
