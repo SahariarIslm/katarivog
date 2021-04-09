@@ -5,7 +5,14 @@
 	use App\Product;
 @endphp
         <div class="container-width">
-            @include('frontend.components.cart_breadcrumb')
+    		<div class="focused-checkout-header pb pt">
+		      <div class="checkout-page-title page-title">
+		      	<a class="no-click hide-for-small">
+	              <h3 class="text-center">Order Complete</h3>
+	            </a>
+		      </div>
+		  </div>
+            
             <div class="row">
                <div id="content" class="large-12 col" role="main">
                     <div class="woocommerce">
@@ -93,6 +100,17 @@
 						            <li class="woocommerce-order-overview__email email">
 						               Email:								
 						               <strong>{{$order->email}}</strong>
+						            </li>
+						            <li class="woocommerce-order-overview__total total">
+						               Shipping Charge:						
+						               <strong>
+						               	<span class="woocommerce-Price-amount amount">
+						               		<bdi>
+						               			<span class="woocommerce-Price-currencySymbol">৳&nbsp;</span>
+						               			{{$order->shipping_charge}}
+						               		</bdi>
+						               	</span>
+						               </strong>
 						            </li>
 						            <li class="woocommerce-order-overview__total total">
 						               Total:						

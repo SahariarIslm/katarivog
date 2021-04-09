@@ -67,6 +67,7 @@ class OrderController extends Controller{
             'phone'=>$request->phone,
             'email'=>$request->email,
             'shipping_address'=>$request->shipping_address,
+            'shipping_charge'=>$request->shipping_charge,
             'payment_method'=>$request->payment_method,
             'bkash_transation_no'=>$request->bkash_transation_no,
             'total_amount'=>$request->total_amount,
