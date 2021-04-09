@@ -22,7 +22,7 @@ class CategoryController extends Controller
                   ->orderBy('orderBy','ASC')
                   ->get();
       // dd($getProductList);
-      $category_list = Category::where('categoryStatus',1)->orderBy('orderBy','ASC')->get();
+    $category_list = Category::where('categoryStatus',1)->orderBy('orderBy','ASC')->get();
      $metaTag =[
         'meta_keyword'=>$category->metaKeyword,
         'meta_title' =>$category->metaTitle,

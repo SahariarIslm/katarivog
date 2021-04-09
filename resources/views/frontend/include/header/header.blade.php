@@ -108,6 +108,10 @@
                       </a>
 
                       <ul class="sub-menu nav-dropdown nav-dropdown-default">
+                        <?php 
+                        use App\Category;
+                        $category_list = Category::where('categoryStatus',1)->orderBy('orderBy','ASC')->get();
+                        ?>
                         @foreach($category_list as $category)
                           <li id="menu-item-342" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-342">
                             <a href="{{ route('category.product',['id'=>$category->id,'name'=>str_replace(' ', '-', $category->categoryName)]) }}">{{$category->categoryName}}</a>

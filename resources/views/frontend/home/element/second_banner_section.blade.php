@@ -5,7 +5,7 @@
         }
     </style>
 </div>
-<div class="banner has-hover is-full-height" id="banner-1223622511">
+<div class="banner has-hover is-full-height" id="banner-1223622511" style="height: 720px;">
     <div class="banner-inner fill" style="padding:0px 0px -10px 0px;margin:-100px 0px -100px 0px;">
         <div class="banner-bg fill" >
             <div class="bg fill bg-fill "></div>
