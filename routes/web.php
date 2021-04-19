@@ -579,6 +579,8 @@ Route::prefix('admin')->group(function()
 
 //frontend url start from here
 Route::get('/', 'FrontendController@index')->name('home.index');
+Route::get('/contact_us', 'FrontendController@contact_us')->name('contact_us');
+Route::get('/about_us', 'FrontendController@about_us')->name('about_us');
 Route::get('/search', 'SearchController@searchProduct')->name('search');
 
 //view product
@@ -606,6 +608,8 @@ Route::post('/complete-order', 'OrderController@OrderSave')->name('order.save');
 //customer authentication before login
 Route::prefix('customer')->group(function()
 {
+	Route::get('/facebook/login', 'CustomerController@redirectToProvider');
+	Route::get('/facebook/login/callback', 'CustomerController@handleProviderCallback');
 	Route::get('/login', 'CustomerController@showLoginForm')->name('customer.login');
 	Route::post('/do-login', 'CustomerController@login')->name('customer.dologin');
 	Route::get('/registration', 'CustomerController@showRegistrationForm')->name('customer.registration');

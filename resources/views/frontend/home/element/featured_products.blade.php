@@ -1,4 +1,5 @@
 @php
+use Illuminate\Support\Str;
   foreach ($topProductSectionList as $topProductSection) {
     $getProductList = \App\Helper\GetData::GetProductListBySection($topProductSection->id);
     $getCategoryBySection = \App\Helper\GetData::GetCategoryBySection($topProductSection->id);
@@ -65,7 +66,7 @@
                             <div class="title-wrapper">
                                 <p class="name product-title">
                                     <a href="{{$getProductDetailsLink}}">
-                                        {{str_limit($product->name,35)}}
+                                        {{str::limit($product->name,35)}}
                                     </a>
                                 </p>
                             </div>

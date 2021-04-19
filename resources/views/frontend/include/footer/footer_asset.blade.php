@@ -8,7 +8,24 @@
             document.body.className = c;
         })()
     </script>
-    
+    <script type="text/javascript">
+        function initMap(){
+            var location = {lat:24.098379, lng:90.328712};
+            var map = new google.maps.Map(document.getElementById('mymap'),{
+                zoom:4,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map:map
+            });
+        }
+        
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8QoQQYz4jwfEyw9wTgk8TK0zuDrzIAns&callback=initMap&libraries=&v=weekly"
+      async defer
+    ></script>
     <script type="text/template" id="tmpl-unavailable-variation-template">
         <p>Sorry, this product is unavailable. Please choose a different combination.</p>
     </script>

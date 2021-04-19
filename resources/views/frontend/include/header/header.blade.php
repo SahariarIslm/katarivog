@@ -8,7 +8,7 @@
               <ul class="nav nav-left medium-nav-center nav-small  nav-divided">
                   <li class="html custom html_topbar_left">
                       <strong class="uppercase">
-                          covid-19 response "stay home, stay safe"
+                          Organic Grocery Store || Opens Time: 9.00AM - 11.00PM
                       </strong>
                   </li>          
               </ul>
@@ -22,7 +22,7 @@
                   <li class="header-contact-wrapper">
                       <ul id="header-contact" class="nav nav-divided nav-uppercase header-contact">
                           <li class="">
-                              <a href="mailto:milkybd1@gmail.com" class="tooltip" title="milkybd1@gmail.com">
+                              <a href="#" class="tooltip" title="katarivogbd@gmail.com">
                                   <i class="icon-envelop" style="font-size:13px;"></i>                 
                                   <span> e-mail </span>
                               </a>
@@ -31,15 +31,15 @@
                   </li>
                   <li class="html custom html_topbar_right">
                       <strong class="uppercase">
-                          +8801973524035
+                          +8801711-593755
                       </strong>
                   </li>
                   <li class="html header-social-icons ml-0">
                       <div class="social-icons follow-icons" >
-                          <a href="https://www.facebook.com/milkybd1/" target="_blank" data-label="Facebook"  rel="noopener noreferrer nofollow" class="icon plain facebook tooltip" title="Follow on Facebook">
+                          <a href="https://www.facebook.com/Katarivog" target="_blank" data-label="Facebook"  rel="noopener noreferrer nofollow" class="icon plain facebook tooltip" title="Follow on Facebook">
                               <i class="icon-facebook" ></i>
                           </a>
-                          <a href="#" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon plain  instagram tooltip" title="Follow on Instagram">
+                          <a href="https://www.instagram.com/katarivog" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon plain  instagram tooltip" title="Follow on Instagram">
                               <i class="icon-instagram" ></i>
                           </a>
                       </div>
@@ -50,7 +50,7 @@
               <ul class="nav nav-center nav-small mobile-nav  nav-divided">
                   <li class="html custom html_topbar_left">
                       <strong class="uppercase">
-                          covid-19 response "stay home, stay safe"
+                          Organic Grocery Store Opens Time: 9.00AM - 11.00PM
                       </strong>
                   </li>          
               </ul>
@@ -91,12 +91,12 @@
           <div class="flex-col hide-for-medium flex-right">
               <ul class="header-nav header-nav-main nav nav-right  nav-divided nav-size-large nav-uppercase">
                   <li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-12 current_page_item menu-item-21 active">
-                      <a href="index.html" aria-current="page" class="nav-top-link">
+                      <a href="{{route('home.index')}}" aria-current="page" class="nav-top-link">
                           Home
                       </a>
                   </li>
                   <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19">
-                      <a href="about-us/index.html" class="nav-top-link">
+                      <a href="{{route('about_us')}}" class="nav-top-link">
                           About Us
                       </a>
                   </li>
@@ -125,7 +125,7 @@
                       </a>
                   </li>
                   <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20">
-                      <a href="contact-us/index.html" class="nav-top-link">
+                      <a href="{{route('contact_us')}}" class="nav-top-link">
                           Contact
                       </a>
                   </li>
@@ -274,7 +274,8 @@
                 </label>
                 <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="f03a43b84a" />
                 <input type="hidden" name="_wp_http_referer" value="/" />           
-                <button type="submit" class="woocommerce-Button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button>
+                <button type="submit" class="woocommerce-Button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button> 
+                <a href="" class="woocommerce-Button button"></a>
               </p>
               <p class="woocommerce-LostPassword lost_password">
                 <a href="my-account/lost-password/index.html">Lost your password?</a>

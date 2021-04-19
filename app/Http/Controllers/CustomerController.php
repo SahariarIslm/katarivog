@@ -5,7 +5,8 @@ use Illuminate\Http\Request;
 
 use DB;
 use Session;
-
+use Auth;
+use Laravel\Socialite\Facades\Socialite;
 use App\Customer;
 use App\VerifyCustomer;
 use App\Order;
@@ -64,6 +65,40 @@ class CustomerController extends Controller
             }
           }
         }
+    }
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+    public function handleProviderCallback()
+    {
+        $customer = Socialite::driver('facebook')->user();
+        // dd($customer);
+        $check = Customer::where('email',$customer->email)->first();
+        if($check){
+            $customerId = $check->id;
+            @$customername = $check->name;
+            Session::put('customerId',$customerId);
+            Session::put('customerName',$customername);
+            return redirect(route('home.index'));
+        }else{
+            // dd($customer);
+        $data           = new Customer;
+        $data->name     = $customer->name;
+        $data->email    = $customer->email;
+        $data->fb_id    = $customer->getId();
+        $data->password = md5('123456');
+        $data->save();
+
+        @$getEmail= DB::table('customers')->where(['email'=>$data->email])->first();
+        $customerId = $getEmail->id;
+        @$customername = $getEmail->name;
+        Session::put('customerId',$customerId);
+        Session::put('customerName',$customername);
+        return redirect(route('home.index'));
+        }
+        
     }
 
     public function passwordForget()

@@ -53,12 +53,8 @@
             <span class="widget-title">Find Us</span>
             <div class="is-divider small">
             </div>
-            <div class="textwidget">
-                <p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.869954519887!2d90.3601626142984!3d23.82322299190889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c13b302800cb%3A0x4dede30483be899f!2s24%2C%207%20Pallabi%2C%20Dhaka%201216!5e0!3m2!1sen!2sbd!4v1601658194385!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
-                    </iframe>
-                </p>
-            </div>
+            <div id="mymap" style="height: 200px; overflow: hidden; position: relative;"></div>
+            
         </div>        
     </div>
 </div>
@@ -94,7 +90,7 @@
         <div class="footer-primary pull-left">
             <div class="copyright-footer">
                 Copyright © {{Date('Y')}}
-                <a href="index.html">Katarivog</a>
+                <a href="{{route('home.index')}}">Katarivog</a>
                     |   Developed by 
                 <a target="_blank" href="https://www.facebook.com/OfficialMr.Editor">
                     Mr. Editor - The Production House

@@ -111,4 +111,10 @@ class FrontendController extends Controller
   public function Page404(){
       return view('frontend.pages.page404');
   }
+  public function about_us(){
+      return view('frontend.pages.about_us');
+  }
+  public function contact_us(){
+      return view('frontend.pages.contact_us');
+  }
 }

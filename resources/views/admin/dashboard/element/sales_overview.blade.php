@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Str;
     use APP\Product;
 ?>
 <div class="col-lg-4 col-md-4">
@@ -95,7 +96,7 @@
                 <tbody id="monthly-sales">
                     @foreach ($salesbymonth as $monthlySale)
                         <tr>
-                            <td class="txt-oflo" width="71%" title="{{$monthlySale->name}}">{{str_limit($monthlySale->name,20)}}</td>
+                            <td class="txt-oflo" width="71%" title="{{$monthlySale->name}}">{{str::limit($monthlySale->name,20)}}</td>
                             <td><span class="text-success">{{$monthlySale->sum}} BDT</span></td>
 
                         </tr>

@@ -1,3 +1,6 @@
+@php 
+use Illuminate\Support\Str;
+@endphp
 <a href="https://milkybd.com/cart/" title="Cart" class="header-cart-link is-small">
    <span class="header-cart-title">
    Cart   /       
@@ -34,7 +37,7 @@
                      <a href="javascript:" class="remove remove_from_cart_button" aria-label="Remove this item" onclick="RemoveCartProduct('{{$carts->rowId}}')" >×</a>                     
                      <a href="{{route('product.details',['id'=>@$carts->id,'name'=>@$name])}}">
                         <img width="300" height="300" src="{{$image}}
-                        " class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="{{$image}} 300w">{{str_limit($carts->name,15)}}           
+                        " class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="{{$image}} 300w">{{str::limit($carts->name,15)}}           
                      </a>
                      <span class="quantity">{{$carts->qty}} × 
                         <span class="woocommerce-Price-amount amount">
