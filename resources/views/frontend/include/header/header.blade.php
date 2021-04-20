@@ -238,16 +238,23 @@
         <div class="col-1 large-6 col pb-0"> 
           <div class="account-login-inner">
             <h3 class="uppercase">Login</h3>
-            <form class="woocommerce-form woocommerce-form-login login" action="{{route('customer.dologin')}}" method="post">
+            <form class="woocommerce-form woocommerce-form-login login" action="{{route('customer.dologin')}}" method="post" id="customer_login_form">
               {{ csrf_field() }}
               <input type="hidden" name="setReview" value="{{@$setReview}}">
               <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="username">Username or email address&nbsp;<span class="required">*</span></label>
-                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="custemail" id="username" autocomplete="username" value="" />         
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="custemail" id="username" autocomplete="username" value="" required="1" style="margin-bottom: 0px !important"/>   
+                <span id="email_error">
+                  
+                </span>  
               </p>
               <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="password">Password&nbsp;<span class="required">*</span></label>
-                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
+                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" required="1" style="margin-bottom: 0px !important"/>
+
+                <span id="password_error">
+                 
+                </span>  
               </p>
               <p class="form-row">
                 <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
@@ -318,3 +325,40 @@
       </div>
     </div>
 </div>
+
+@section('custom_js')
+  <script>
+        $(document).on('submit', '#customer_login_form', function (event) {
+            event.preventDefault();
+            $('.ajax-error').remove();
+            var data = new FormData(this);
+            $.ajaxSetup({
+                headers:
+                    {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                    }
+            });
+            $.ajax({
+                type: "POST",
+                url: $(this).attr('action'),
+                data:data,
+                cache:false,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                  var key = response.key;
+                  var error = response.error;
+                  if(error){
+                    var message = '<span class="ajax-error" style="color: red;font-size: 13px;">'+error+'</span>'
+                    $('#'+key+"_error").html(message)
+                  }else if(response.redirect_url){
+                    window.location.href = response.redirect_url;
+                  }
+                },
+                error: function(xhr) {
+                   
+                }
+            })
+        });
+    </script>
+@endsection

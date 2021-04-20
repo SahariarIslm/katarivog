@@ -40,16 +40,24 @@ class CustomerController extends Controller
 
           if ($email == "" || $password == "") {
           $message = "<h5 style='display:inline-block;width:auto;' class='alert alert-danger'>Field must not be empty</h5>"; 
-          Session::put('message',$message); 
-          return redirect(route('home.index'))->withInput();
+          /*Session::put('message',$message); 
+          return redirect(route('home.index'))->withInput();*/
           }elseif ($countEmail < 1) {
-            $message = "<h5 style='display:inline-block;width:auto;' class='alert alert-danger'>Your Email Address Not Matched</h5>"; 
-            Session::put('message',$message); 
-            return redirect(route('home.index', ['setReview'=>@$setReview]))->withInput();
+            $message = "Your Email Address Not Matched"; 
+            return response()->json([
+                'key' => 'email',
+                'error' => $message
+              ]);
+            /*Session::put('message',$message); 
+            return redirect(route('home.index', ['setReview'=>@$setReview]))->withInput();*/
           }elseif($countPassword < 1){
-            $message = "<h5 style='display:inline-block;width:auto;' class='alert alert-danger'>Sorry, Password Not Matched</h5>"; 
-              Session::put('message',$message); 
-              return redirect(route('home.index',['setReview'=>$setReview]))->withInput();
+            $message = "Sorry, Password Not Matched"; 
+            return response()->json([
+                'key' => 'password',
+                'error' => $message
+              ]);
+              /*Session::put('message',$message); 
+              return redirect(route('home.index',['setReview'=>$setReview]))->withInput();*/
           }else{
             if ($countEmail > 0) {
               Session::put('customerId',$customerId);
@@ -57,11 +65,18 @@ class CustomerController extends Controller
               if(@$setReview){
                 $products = Product::where('id',$setReview)->first();
                 $name = str_replace(' ', '-', $products->name);
-                return redirect(url('product/'.@$products->id.'/'.@$name.'?setReview='.$setReview));
+                return response()->json([
+                    'redirect_url' => url('product/'.@$products->id.'/'.@$name.'?setReview='.$setReview),
+                  ]);
+               /* return redirect(url('product/'.@$products->id.'/'.@$name.'?setReview='.$setReview));*/
               }else{
 
               }
-              return redirect(route('home.index'));
+
+            return response()->json([
+                'redirect_url' => route('home.index'),
+            ]);
+              //return redirect(route('home.index'));
             }
           }
         }
