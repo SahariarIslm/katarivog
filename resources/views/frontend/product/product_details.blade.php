@@ -24,6 +24,7 @@
     $getImage = \App\Helper\GetData::GetProductImage($product->id);
 
 
+
     if(@$productSection->hotDiscount != ''){
         $price = $productSection->hotDiscount;
     }elseif(@$productSection->specialDiscount != ''){
@@ -100,7 +101,9 @@
 	    							<div data-thumb="{{asset($getImage->images)}}" class="woocommerce-product-gallery__image slide first">
 	    								<a href="{{asset($getImage->images)}}" data-fancybox="gallery">
 	    									@if(file_exists(@$getImage->images))
-	    									<img width="320" height="320" src="{{asset($getImage->images)}}" class="{{asset($getImage->images)}} 1200w" alt=""/>
+	    									<img width="320" height="320"
+	    									<?php asset($getImage->imageS)?>
+	    									src="{{asset($getImage->images)}}" class="{{asset($getImage->images)}} 1200w" alt=""/>
 	    									@else
 	    									<img width="320" height="320" src="{{$noImage}}" class="wp-post-image skip-lazy" srcset="{{$noImage}}" alt=""/>
 	    									@endif

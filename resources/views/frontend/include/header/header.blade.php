@@ -120,7 +120,7 @@
                       </ul>
                   </li>
                   <li id="menu-item-264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-264">
-                      <a href="nutrition-guide/index.html" class="nav-top-link">
+                      <a href="" class="nav-top-link">
                           Nutrition Guide
                       </a>
                   </li>
@@ -139,7 +139,7 @@
                           
                       <div id="search-lightbox" class="mfp-hide dark text-center">
                           <div class="searchform-wrapper ux-search-box relative is-large">
-                              <form role="search" method="get" class="searchform" action="https://milkybd.com/">
+                              <form role="search" method="get" class="searchform" action="https://katarivog.com.bd/">
                                   <div class="flex-row relative">
                                       <div class="flex-col search-form-categories">
                                           <select class="search_categories resize-select mb-0" name="product_cat">
@@ -197,7 +197,7 @@
           <div class="flex-col show-for-medium flex-right">
               <ul class="mobile-nav nav nav-right ">
                   <li class="cart-item has-icon">
-                      <a href="cart/index.html" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Cart" data-pos="right">
+                      <a href="" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Cart" data-pos="right">
                           <span class="cart-icon image-icon">
                               <strong>0</strong>
                           </span>
@@ -231,25 +231,6 @@
   </div>   
 </div>
 <div id="login-form-popup" class="lightbox-content mfp-hide">
-    <div class="the_champ_outer_login_container">
-      <div class="the_champ_social_login_title">Login with your Social ID</div>
-      <div class="the_champ_login_container">
-        <ul class="the_champ_login_ul">
-          <li>
-            <i class="theChampLogin theChampFacebookBackground theChampFacebookLogin" alt="Login with Facebook" title="Login with Facebook" onclick="theChampInitiateLogin(this)" >
-              <div class="theChampFacebookLogoContainer">
-                <ss style="display:block" class="theChampLoginSvg theChampFacebookLoginSvg"></ss>
-              </div>
-            </i>
-          </li>
-          <li>
-            <i id="theChampGoogleButton" class="theChampLogin theChampGoogleBackground theChampGoogleLogin" alt="Login with Google" title="Login with Google" onclick="theChampInitiateLogin(this)" >
-              <ss style="display:block" class="theChampLoginSvg theChampGoogleLoginSvg"></ss>
-            </i>
-          </li>
-        </ul>
-      </div>
-    </div>
     <div style="clear:both; margin-bottom: 6px"></div>
     <div class="woocommerce-notices-wrapper"></div>
     <div class="account-container lightbox-inner">
@@ -275,10 +256,17 @@
                 <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="f03a43b84a" />
                 <input type="hidden" name="_wp_http_referer" value="/" />           
                 <button type="submit" class="woocommerce-Button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button> 
-                <a href="" class="woocommerce-Button button"></a>
+                
               </p>
               <p class="woocommerce-LostPassword lost_password">
                 <a href="my-account/lost-password/index.html">Lost your password?</a>
+              </p>
+              <hr/>
+              <p class="woocommerce-LostPassword lost_password">
+                Login With Social Media
+              </p>
+              <p class="form-row">
+                  <a href="https://www.katarivog.com.bd/customer/facebook/login" class="woocommerce-Button button"><i class="fa fa-facebook" style="margin: auto;" ></i></a>
               </p>
             </form>
           </div>

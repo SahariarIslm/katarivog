@@ -64,7 +64,7 @@ use App\Category;
                         <div class="title-wrapper">
                             <p class="name product-title">
                                 <a href="{{$getProductDetailsLink}}">
-                                    {{str_limit($product->name,35)}}
+                                    {{\Illuminate\Support\Str::limit($product->name,35)}}
                                 </a>
                             </p>
                         </div>

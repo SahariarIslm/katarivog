@@ -129,8 +129,8 @@
         <!-- WooCommerce Facebook Integration End -->         
         <!-- Jetpack Open Graph Tags -->
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Milky" />
-        <meta property="og:site_name" content="Milky" />
+        <meta property="og:title" content="Katarivog" />
+        <meta property="og:site_name" content="Katarivog" />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="en_US" />
